@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Clinia La Bendicion de Dios</title>
+    <title>Clinica La Bendición de Dios</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -30,21 +30,20 @@
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Clinica<span> La Bendicion de Dios</span></a>
+	      <a class="navbar-brand" href="index.html">Clinica<span> La Bendición de Dios</span></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Pagina Principal</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">Sobre Nosotros</a></li>
-	          <li class="nav-item"><a href="services.html" class="nav-link">Servicios</a></li>
-	          <li class="nav-item"><a href="doctors.html" class="nav-link">Doctores</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contactanos</a></li>
+	          <li class="nav-item active"><a href="#inicio" class="nav-link">Inicio</a></li>
+	          <li class="nav-item"><a href="#sobre-nosotros" class="nav-link">Sobre Nosotros</a></li>
+	          <li class="nav-item"><a href="#servicios" class="nav-link">Servicios</a></li>
+	          <li class="nav-item"><a href="#precios" class="nav-link">Precios</a></li>
+	          <li class="nav-item"><a href="#contactanos" class="nav-link">Contactanos</a></li>
 	          <li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>Haz una cita</span></a></li>
-            <li class="nav-item cta"><a href="login.html" class="nav-link"><span>Iniciar Sesión</span></a></li>
+            <li class="nav-item cta"><a href="index.php" class="nav-link"><span>Iniciar Sesión</span></a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -52,7 +51,7 @@
     <!-- END nav -->
 
     <section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image: url('images/bg_1.jpg');">
+      <div id = "inicio" class="slider-item" style="background-image: url('images/bg_1.jpg');">
         <div class="overlay"></div>
         <div class="container">
           <div class="row slider-text align-items-center" data-scrollax-parent="true">
@@ -154,7 +153,7 @@
 	              </div>
 	            </div>
 	            
-	            <div class="form-group">
+	            <div id="servicios" class="form-group">
 	              <input type="submit" value="Guardar Cita" class="btn btn-primary">
 	            </div>
 	          </form>
@@ -323,6 +322,7 @@
 		      </div>
 	      </div>
     	</div>
+      <div id="precios"></div>
     </section>
 
     <section class="ftco-section">
@@ -403,23 +403,67 @@
     </section>
 
     <section class="ftco-section-parallax">
-      <div class="parallax-img d-flex align-items-center">
-        <div class="container">
-          <div class="row d-flex justify-content-center">
-            <div class="col-md-2 text-center heading-section heading-section-white ftco-animate">
-              <div class="row d-flex justify-content-center mt-1">
-                <div class="col-md-1">
-                    <div class="form-group d-flex">
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div id = "sobre-nosotros" class="parallax-img d-flex align-items-center">
       </div>
     </section>
+
+    <section class="ftco-section">
+    	<div class="container">
+    		<div class="row d-md-flex">
+	    		<div class="col-md-6 ftco-animate img about-image order-md-last" style="background-image: url(images/clinica2.png);">
+	    		</div>
+	    		<div class="col-md-6 ftco-animate pr-md-5 order-md-first">
+            <h2 class="mb-3">Sobre Nosotros</h2>
+		    		<div class="row">
+		          <div class="col-md-12 nav-link-wrap mb-5">
+		            <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+		              <a class="nav-link active" id="v-pills-whatwedo-tab" data-toggle="pill" href="#v-pills-whatwedo" role="tab" aria-controls="v-pills-whatwedo" aria-selected="true">Historia</a>
+
+		              <a class="nav-link" id="v-pills-mission-tab" data-toggle="pill" href="#v-pills-mission" role="tab" aria-controls="v-pills-mission" aria-selected="false">Misión</a>
+
+		              <a class="nav-link" id="v-pills-goal-tab" data-toggle="pill" href="#v-pills-goal" role="tab" aria-controls="v-pills-goal" aria-selected="false">Visión</a>
+		            </div>
+		          </div>
+		          <div class="col-md-12 d-flex align-items-center">
+		            
+		            <div class="tab-content ftco-animate" id="v-pills-tabContent">
+
+		              <div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel" aria-labelledby="v-pills-whatwedo-tab">
+		              	<div>
+			                <h2 class="mb-4">Santa Ana, 1998</h2>
+			              	<p>Insertar la historia de La Clinica La Bendición de Dios</p>
+			                <p>Dar mas detalles en esta sección</p>
+				            </div>
+		              </div>
+
+		              <div class="tab-pane fade" id="v-pills-mission" role="tabpanel" aria-labelledby="v-pills-mission-tab">
+		                <div>
+			                <h2 class="mb-4">Cuidar de nuestros pacientes</h2>
+			              	<p>Insertar mision de La Clinica La Bendicion de Dios</p>
+			                <p>Dar mas detalles de la misión</p>
+				            </div>
+		              </div>
+
+		              <div class="tab-pane fade" id="v-pills-goal" role="tabpanel" aria-labelledby="v-pills-goal-tab">
+		                <div>
+			                <h2 class="mb-4">Visión</h2>
+			              	<p>Insertar Visión de la Clinica La Bendicion de Dios.</p>
+			                <p>Dar mas detalles de la visión</p>
+				            </div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+    	</div>
+    </section>
 		
+    <section class="ftco-section-parallax">
+      <div class="parallax-img d-flex align-items-center">
+      </div>
+    </section>
+
 		<section class="ftco-section testimony-section bg-light">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
@@ -562,7 +606,7 @@
 		<div id="map"></div>
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
-      <div class="container">
+      <div id = "contactanos" class="container">
         <div class="row mb-5">
           <div class="col-md-3">
             <div class="ftco-footer-widget mb-4">
