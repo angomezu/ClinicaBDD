@@ -1,7 +1,3 @@
-<?php
-  include_once 'header.php';
-?>
-
 <section class="signup-form">
     <h2>Iniciar Sesión</h2>
     <form action="includes/login.inc.php" method = "post">
@@ -21,6 +17,3 @@
 ?>
 </section>
 
-<?php
-  include_once 'footer.php';
-?>

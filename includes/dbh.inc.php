@@ -2,8 +2,8 @@
 
 $serverName= "localhost";
 $dBUsername= "root";
-$dBPassword= "";
-$dBName= "logintest";
+$dBPassword= "clinicaBDD2022$";
+$dBName= "clinicaBDD";
 
 $conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
 

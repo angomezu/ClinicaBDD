@@ -1,7 +1,3 @@
-<?php
-  include_once 'header.php';
-?>
-
 <section class="signup-form">
     <h2>Registro</h2>
     <form action="includes/signup.inc.php" method="post">
@@ -31,12 +27,11 @@
     }
     else if ($_GET["error"] == "none") {
       echo "<p>¡Ha iniciado sesión exitosamente!</p>";
+      header("location: ../ClinicaBDD/login.php");
+      exit();
     }
   }
 ?>
 </section>
 
 
-<?php
-  include_once 'footer.php';
-?>
