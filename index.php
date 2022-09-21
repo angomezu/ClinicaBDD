@@ -9,8 +9,6 @@
             echo "<li><a href ='includes/logout.inc.php'>Cerrar Sesión</a></li>";
             }
     ?>
-    <h1>Bienvenido a la página de Inicio de Sesión</h1>
-    <p></p>
 </section>
 
 <?php
