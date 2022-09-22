@@ -46,12 +46,16 @@
         <ul class="navbar-nav ml-auto">
         <a href="index.php"></a>
           <!--<li class="nav-item active"><a href="#inicio" class="nav-link">Inicio</a></li>-->
+          <?php
+        if (isset($_SESSION["useruid"])) {
+            echo "<li class='nav-item'><a class='nav-link'><span>Bienvenido " . $_SESSION["useruid"] . "</span><a/></li>";
+            }?>
           <li class="nav-item"><a href="#sobre-nosotros" class="nav-link">Sobre Nosotros</a></li>
           <li class="nav-item"><a href="#servicios" class="nav-link">Servicios</a></li>
           <li class="nav-item"><a href="#precios" class="nav-link">Precios</a></li>
           <li class="nav-item"><a href="#contactanos" class="nav-link">Contactanos</a></li>
-          <li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal"
-              data-target="#modalRequest"><span>Haz una cita</span></a></li>
+          <!--<li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal"
+              data-target="#modalRequest"><span>Haz una cita</span></a></li>-->
           <!--<li class="nav-item cta"><a href="index.php" class="nav-link"><span>Iniciar Sesión</span></a></li>-->
           <?php
                   if (isset($_SESSION["useruid"])) {

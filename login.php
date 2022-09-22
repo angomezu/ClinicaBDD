@@ -15,5 +15,6 @@
     }   
   }
 ?>
+<p class="nav-item"><a href="signup.php" class="nav-link">¿Aún no tiene una cuenta? Registrese</a></p>
 </section>
 

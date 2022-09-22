@@ -32,6 +32,7 @@
     }
   }
 ?>
+<p class="nav-item"><a href="login.php" class="nav-link">¿Ya tiene una cuenta? Inicie Sesión</a></p>
 </section>
 
 
