@@ -1,15 +1,15 @@
 <?php
+ $servername = "localhost";
+ $username = "root";
+ $password = "clinicaBDD2022$";
+ $database = "clinicaBDD";
 
-$servername = "localhost";
-$username = "root";
-$password = "clinicaBDD2022$";
-$database = "clinicaBDD";
+ // Conexión Base de Datos
+ $connection = new mysqli($servername, $username, $password, $database);
 
-// Conexión Base de Datos
-$connection = new mysqli($servername, $username, $password, $database);
 
-$id = "";
 $name = "";
+$gender = "";
 $email = "";
 $phone = "";
 $address = "";
@@ -17,48 +17,22 @@ $address = "";
 $errorMessage = "";
 $successMessage = "";
 
-if ( $_SERVER['REQUEST_METHOD'] == 'GET') {
-    //GET muestra la data del cliente
-
-    if ( !isset($_GET["id"]) ) {
-        header("location: admin.php");
-        exit;
-    }
-
-    $id = $_GET["id"];
-
-    // lee la fila del cliente seleccionado de la table en la base de datos
-    $sql = "SELECT * FROM doctores WHERE id=$id";
-    $result = $connection->query($sql);
-    $row = $result->fetch_assoc();
-
-    if (!$row) {
-        header("location: admin.php");
-        exit;
-    }
-
-    $name = $row["name"];
-    $email = $row["email"];
-    $phone = $row["phone"];
-    $address = $row["address"];
-}
-else {
-    // POST actualiza la data del cliente
-    $id = $_POST["id"];
+if ($_SERVER['REQUEST_METHOD'] == 'POST' ) {
     $name = $_POST["name"];
+    $gender = $_POST["gender"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
     $address = $_POST["address"];
 
-    do {
-        if ( empty($id) || empty($name) || empty($email) || empty($phone) || empty($address) ) {
+    do{
+        if ( empty($name) || empty($gender) || empty($email) || empty($phone) || empty($address) ) {
             $errorMessage = "Por favor llenar todos los campos";
             break;
         }
 
-        $sql = "UPDATE doctores " .
-               "SET name ='$name', email = '$email', phone = '$phone', address = '$address' " . 
-               "WHERE id = $id";
+        //Añadir nuevo Doctor a la Base de Datos
+        $sql = "INSERT INTO pacientes (name, gender, email, phone, address) " .
+               "VALUES ('$name', '$gender', '$email', '$phone', '$address')";
         $result = $connection->query($sql);
 
         if (!$result) {
@@ -66,15 +40,21 @@ else {
             break;
         }
 
-        $successMessage = "Los datos del Doctor han sido actualizados correctamente";
+        $name = "";
+        $gender = "";
+        $email = "";
+        $phone = "";
+        $address = "";
+
+        $successMessage = "Paciente ha sido agregado correctamente";
 
         header("location: admin.php");
         exit;
 
-
-    } while (true);
+    } while (false);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,7 +67,7 @@ else {
 </head>
 <body>
     <div class="container my-5">
-        <h2>Nuevo Doctor</h2>
+        <h2>Nuevo Paciente</h2>
 
         <?php
         if ( !empty($errorMessage)) {
@@ -102,11 +82,16 @@ else {
 
         ?>
         <form method="post">
-            <input type="hidden" name="id" value="<?php echo $id; ?>">
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Nombre</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="name" value="<?php echo $name; ?>">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Género</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="gender" value="<?php echo $gender; ?>">
                 </div>
             </div>
             <div class="row mb-3">

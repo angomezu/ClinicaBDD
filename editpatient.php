@@ -10,6 +10,7 @@ $connection = new mysqli($servername, $username, $password, $database);
 
 $id = "";
 $name = "";
+$gender = "";
 $email = "";
 $phone = "";
 $address = "";
@@ -28,7 +29,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET') {
     $id = $_GET["id"];
 
     // lee la fila del cliente seleccionado de la table en la base de datos
-    $sql = "SELECT * FROM doctores WHERE id=$id";
+    $sql = "SELECT * FROM pacientes WHERE id=$id";
     $result = $connection->query($sql);
     $row = $result->fetch_assoc();
 
@@ -38,6 +39,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'GET') {
     }
 
     $name = $row["name"];
+    $gender = $row["gender"];
     $email = $row["email"];
     $phone = $row["phone"];
     $address = $row["address"];
@@ -46,18 +48,19 @@ else {
     // POST actualiza la data del cliente
     $id = $_POST["id"];
     $name = $_POST["name"];
+    $gender = $_POST["gender"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
     $address = $_POST["address"];
 
     do {
-        if ( empty($id) || empty($name) || empty($email) || empty($phone) || empty($address) ) {
+        if ( empty($id) || empty($name) || empty($gender) || empty($email) || empty($phone) || empty($address) ) {
             $errorMessage = "Por favor llenar todos los campos";
             break;
         }
 
-        $sql = "UPDATE doctores " .
-               "SET name ='$name', email = '$email', phone = '$phone', address = '$address' " . 
+        $sql = "UPDATE pacientes " .
+               "SET name ='$name', gender ='$gender', email = '$email', phone = '$phone', address = '$address' " . 
                "WHERE id = $id";
         $result = $connection->query($sql);
 
@@ -66,7 +69,7 @@ else {
             break;
         }
 
-        $successMessage = "Los datos del Doctor han sido actualizados correctamente";
+        $successMessage = "Los datos del Paciente han sido actualizados correctamente";
 
         header("location: admin.php");
         exit;
@@ -87,7 +90,7 @@ else {
 </head>
 <body>
     <div class="container my-5">
-        <h2>Nuevo Doctor</h2>
+        <h2>Nuevo Paciente</h2>
 
         <?php
         if ( !empty($errorMessage)) {
@@ -107,6 +110,12 @@ else {
                 <label class="col-sm-3 col-form-label">Nombre</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="name" value="<?php echo $name; ?>">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Género</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="gender" value="<?php echo $gender; ?>">
                 </div>
             </div>
             <div class="row mb-3">
