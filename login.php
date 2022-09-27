@@ -1,186 +1,192 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Clinica Bendición de Dios</title>
-	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-<link rel="stylesheet" type="text/css" href="style1.css">
-<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/animations.css">  
+    <link rel="stylesheet" href="css/main.css">  
+    <link rel="stylesheet" href="css/login.css">
+        
+    <title>Inicio de Sesión</title>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-<link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
-<style >
-     .form-control {
-    border-radius: 0.75rem;
-}
-</style>
-
-<script>
-    var check = function() {
-  if (document.getElementById('password').value ==
-    document.getElementById('cpassword').value) {
-    document.getElementById('message').style.color = '#5dd05d';
-    document.getElementById('message').innerHTML = 'Matched';
-  } else {
-    document.getElementById('message').style.color = '#f55252';
-    document.getElementById('message').innerHTML = 'Not Matching';
-  }
-}
-
-function alphaOnly(event) {
-  var key = event.keyCode;
-  return ((key >= 65 && key <= 90) || key == 8 || key == 32);
-};
-
-function checklen()
-{
-    var pass1 = document.getElementById("password");  
-    if(pass1.value.length<6){  
-        alert("Password must be at least 6 characters long. Try again!");  
-        return false;  
-  }  
-}
-
-</script>
-
+    
+    
 </head>
-
-<!------ Include the above in your HEAD tag ---------->
 <body>
+    <?php
 
-<div class="container register" style="font-family: 'IBM Plex Sans', sans-serif;">
-<section class="signup-form">
-    <h2>Clinica Bendición de Dios</h2>
-    <form action="includes/login.inc.php" method = "post">
-                <div class="row">
-                    <div class="col-md-3 register-left" style="margin-top: 10%;right: 5%">
-                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-                        <h3></h3>
-                    </div>
-                    <div class="col-md-9 register-right" style="margin-top: 40px;left: 80px;">
-                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="width: 40%;">
-                            <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Paciente</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Doctor</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#admin" role="tab" aria-controls="admin" aria-selected="false">Recepcionista</a>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                
-                                <form method="post" action="func2.php">
-                                <div class="row register-form">
-                                    
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                        </div>
-                                        <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Usuario *" name="uid" onkeydown="return alphaOnly(event);" required/>
-                                        </div>
-                                        <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Contraseña *" name="pwd" required/>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <div class="maxl">
-                                            </div>
-                                            <a href="signup.php">¿Aún no tiene una cuenta?</a>
-                                        </div>
-                                    </div>
-                                
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                           
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            
-                                        </div>
-                                        <div class="form-group">
-                                        <input type="submit" class="btnRegister" value="Iniciar Sesión" name="submit"/>
-                                        </div>
-                                      
-                                    </div>
+ 
 
-                                </div>
-                            </form>
-                            </form>
-                            </div>
-                            <?php
-                             if (isset($_GET["error"])) {
-                          if ($_GET["error"] == "emptyinput") {
-                            echo "<p>Por favor llenar todos los campos.</p>";
-                          }
-                          else if ($_GET["error"] == "wronglogin") {
-                            echo "<p>Usuario o Contraseña Incorrectos.</p>";
-                          }   
-                        }
-                          ?>
+    session_start();
 
-                            
-                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <h3  class="register-heading"></h3>
-                                <form method="post" action="func1.php">
-                                <div class="row register-form">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Usuario *" name="username3" onkeydown="return alphaOnly(event);" required/>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Contraseña *" name="password3" required/>
-                                        </div>
-                                        
-                                        <input type="submit" class="btnRegister" name="docsub1" value="Iniciar Sesión"/>
-                                    </div>
-                                </div>
-                            </form>
-                            </div>
+    $_SESSION["user"]="";
+    $_SESSION["usertype"]="";
+    
+    // Set the new timezone
+    date_default_timezone_set('America/El_Salvador');
+    $date = date('Y-m-d');
+
+    $_SESSION["date"]=$date;
+    
+
+    //import database
+    include("connection.php");
+
+    
 
 
-                            <div class="tab-pane fade show" id="admin" role="tabpanel" aria-labelledby="profile-tab">
-                                <h3  class="register-heading"></h3>
-                                <form method="post" action="func3.php">
-                                <div class="row register-form">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Usuario *" name="username1" onkeydown="return alphaOnly(event);" required/>
-                                        </div>
-                                        
+
+    if($_POST){
+
+        $email=$_POST['useremail'];
+        $password=$_POST['userpassword'];
+        
+        $error='<label for="promter" class="form-label"></label>';
+
+        $result= $database->query("select * from webuser where email='$email'");
+        if($result->num_rows==1){
+            $utype=$result->fetch_assoc()['usertype'];
+            if ($utype=='p'){
+                $checker = $database->query("select * from patient where pemail='$email' and ppassword='$password'");
+                if ($checker->num_rows==1){
 
 
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Contraseña *" name="password2" required/>
-                                        </div>
-                                        
-                                        <input type="submit" class="btnRegister" name="adsub" value="Iniciar Sesión"/>
-                                    </div>
-                                </div>
-                            </form>
-                            </div>
-                        </div>
+                    //   Patient dashbord
+                    $_SESSION['user']=$email;
+                    $_SESSION['usertype']='p';
+                    
+                    header('location: patient/index.php');
 
-                    </div>
-                </div>
+                }else{
+                    $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Error: Contraseña o correo invalido</label>';
+                }
 
-            </div>
-    </body>
+            }elseif($utype=='a'){
+                $checker = $database->query("select * from admin where aemail='$email' and apassword='$password'");
+                if ($checker->num_rows==1){
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-    </html>
+                    //   Admin dashbord
+                    $_SESSION['user']=$email;
+                    $_SESSION['usertype']='a';
+                    
+                    header('location: admin/index.php');
 
-  
+                }else{
+                    $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Error: Contraseña o correo invalido</label>';
+                }
+
+
+            }elseif($utype=='d'){
+                $checker = $database->query("select * from doctor where docemail='$email' and docpassword='$password'");
+                if ($checker->num_rows==1){
+
+
+                    //   doctor dashbord
+                    $_SESSION['user']=$email;
+                    $_SESSION['usertype']='d';
+                    header('location: doctor/index.php');
+
+                }else{
+                    $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Error: Contraseña o correo invalido</label>';
+                }
+
+            }
+            
+        }else{
+            $error='<label for="promter" class="form-label" style="color:rgb(255, 62, 62);text-align:center;">Error: No encontramos ninguna cuenta con este correo.</label>';
+        }
+
+
+
+
+
+
+        
+    }else{
+        $error='<label for="promter" class="form-label">&nbsp;</label>';
+    }
+
+    ?>
+
+
+
+
+
+    <center>
+    <div class="container">
+        <table border="0" style="margin: 0;padding: 0;width: 60%;">
+            <tr>
+                <td>
+                    <p class="header-text">Bienvenido</p>
+                </td>
+            </tr>
+        <div class="form-body">
+            <tr>
+                <td>
+                    <p class="sub-text">Ingrese sus credenciales para iniciar sesión</p>
+                </td>
+            </tr>
+            <tr>
+                <form action="" method="POST" >
+                <td class="label-td">
+                    <label for="useremail" class="form-label">Email: </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-td">
+                    <input type="email" name="useremail" class="input-text" placeholder="Dirección de email" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="label-td">
+                    <label for="userpassword" class="form-label">Contraseña: </label>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label-td">
+                    <input type="Password" name="userpassword" class="input-text" placeholder="Ingrese su contraseña" required>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td><br>
+                <?php echo $error ?>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="submit" value="Iniciar Sesión" class="login-btn btn-primary btn">
+                </td>
+            </tr>
+        </div>
+            <tr>
+                <td>
+                    <br>
+                    <label for="" class="sub-text" style="font-weight: 280;">¿Aún no tiene una cuenta&#63; </label>
+                    <a href="signup.php" class="hover-link1 non-style-link">Regístrese aquí</a>
+                    <br><br><br>
+                </td>
+            </tr>
+            <tr>
+            <td>
+                    <label for="" class="sub-text" style="font-weight: 280;">Regresar a la</label>
+                    <a href="index.php" class="hover-link1 non-style-link">Página Principal</a>
+                    <br><br><br>
+                </td>
+            </tr>
+                        
+                        
+    
+                        
+                    </form>
+        </table>
+
+    </div>
+</center>
+</body>
+</html>

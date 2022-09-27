@@ -1,15 +1,766 @@
 <?php
-    include_once 'header.php';
+  session_start();
 ?>
 
-<section class="index-intro">
-    <?php
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Clinica La Bendición de Dios</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/ionicons.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Clinica<span> La Bendición de Dios</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+        aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <a href="index.php"></a>
+          <!--<li class="nav-item active"><a href="#inicio" class="nav-link">Inicio</a></li>-->
+          <?php
         if (isset($_SESSION["useruid"])) {
-            echo "<p>Bienvernido " . $_SESSION["useruid"] . "</p>";
-            }
-    ?>
-</section>
+            echo "<li class='nav-item'><a class='nav-link'><span>Bienvenido " . $_SESSION["useruid"] . "</span><a/></li>";
+            }?>
+          <li class="nav-item"><a href="#sobre-nosotros" class="nav-link">Sobre Nosotros</a></li>
+          <li class="nav-item"><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li class="nav-item"><a href="#precios" class="nav-link">Precios</a></li>
+          <li class="nav-item"><a href="#contactanos" class="nav-link">Contactanos</a></li>
+          <!--<li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal"
+              data-target="#modalRequest"><span>Haz una cita</span></a></li>-->
+          <!--<li class="nav-item cta"><a href="index.php" class="nav-link"><span>Iniciar Sesión</span></a></li>-->
+          <?php
+                  if (isset($_SESSION["useruid"])) {
+                    echo "<li class='nav-item cta'><a href ='profile.php' class='nav-link'><span>Perfil</span></a></li>";
+                    echo "<li class='nav-item cta'><a href ='includes/logout.inc.php' class='nav-link'></span><span>Cerrar Sesión</a></li>";
+                  }
+                  else {
+                    echo "<li class='nav-item cta'><a href ='login.php' class='nav-link'><span>Iniciar Sesión</span></a></li>";
+                  }
+                ?>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- END nav -->
 
-<?php
-    include_once 'footer.php';
-?>
+  <section class="home-slider owl-carousel">
+    <div id="inicio" class="slider-item" style="background-image: url('images/bg_1.jpg');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row slider-text align-items-center" data-scrollax-parent="true">
+          <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Medicina moderna con
+              profesionales a tu servicio</h1>
+            <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">¿Tienes alguna consulta?</p>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#"
+                class="btn btn-primary px-4 py-3" data-toggle="modal" data-target="#modalRequest">Contáctanos</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slider-item" style="background-image: url('images/bg_2.jpg');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row slider-text align-items-center" data-scrollax-parent="true">
+          <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Pasar consulta no tiene que
+              sar tan dificil</h1>
+            <p class="mb-4">¿Tienes alguna consulta?</p>
+            <p><a href="#" class="btn btn-primary px-4 py-3" data-toggle="modal" data-target="#modalRequest">Haz una
+                cita</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-intro">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-md-6 color-1 p-4">
+          <h3 class="mb-4">Servicio de Emergencia</h3>
+          <p>Si tu o algun conocido presenta alguna emergencia contactanos</p>
+          <span class="phone-number">+ (503) 2234-4444</span>
+        </div>
+        <div class="col-md-6 color-3 p-4">
+          <h3 class="mb-4">Horarios de Servicios</h3>
+          <p class="openinghours d-flex">
+            <span>Lunes - Viernes</span>
+            <span>6:00 - 19:00</span>
+          </p>
+          <p class="openinghours d-flex">
+            <span>Sabado</span>
+            <span>8:00 - 17:00</span>
+          </p>
+          <p class="openinghours d-flex">
+            <span>Domingo</span>
+            <span>8:00 - 16:00</span>
+          </p>
+        </div>
+  </section>
+
+  <section class="ftco-section ftco-services">
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-5">
+        <div class="col-md-7 text-center heading-section ftco-animate">
+          <h2 class="mb-2">Ofrecemos los siguientes servicios</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services d-block text-center">
+            <div class="icon d-flex justify-content-center align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-hospital"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8.5 5.034v1.1l.953-.55.5.867L9 7l.953.55-.5.866-.953-.55v1.1h-1v-1.1l-.953.55-.5-.866L7 7l-.953-.55.5-.866.953.55v-1.1h1ZM13.25 9a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM13 11.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Zm.25 1.75a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5Zm-11-4a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 9.75v-.5A.25.25 0 0 0 2.75 9h-.5Zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM2 13.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Z" />
+                <path
+                  d="M5 1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 1 1v4h3a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3V3a1 1 0 0 1 1-1V1Zm2 14h2v-3H7v3Zm3 0h1V3H5v12h1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3Zm0-14H6v1h4V1Zm2 7v7h3V8h-3Zm-8 7V8H1v7h3Z" />
+              </svg>
+            </div>
+            <div class="media-body p-2 mt-3">
+              <h3 class="heading">Emergencias</h3>
+              <p>Nuestra Unidad de Emergencia está conformada por especialistas y subespecialistas de todas las áreas de
+                la medicina para brindar atención oportuna a todo tipo de patologías.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services d-block text-center">
+            <div class="icon d-flex justify-content-center align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                class="bi bi-file-earmark-medical" viewBox="0 0 16 16">
+                <path
+                  d="M7.5 5.5a.5.5 0 0 0-1 0v.634l-.549-.317a.5.5 0 1 0-.5.866L6 7l-.549.317a.5.5 0 1 0 .5.866l.549-.317V8.5a.5.5 0 1 0 1 0v-.634l.549.317a.5.5 0 1 0 .5-.866L8 7l.549-.317a.5.5 0 1 0-.5-.866l-.549.317V5.5zm-2 4.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zm0 2a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
+                <path
+                  d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z" />
+              </svg>
+            </div>
+            <div class="media-body p-2 mt-3">
+              <h3 class="heading">Diagnosticos</h3>
+              <p>En Clinica la Bendicion de Dios contamos con laboratorios completos para apoyar a nuestros pacientes y
+                médicos a obtener resultados oportunos para determinar un diagnóstico confiable y seguro.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services d-block text-center">
+            <div class="icon d-flex justify-content-center align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-bandaid"
+                viewBox="0 0 16 16">
+                <path
+                  d="M14.121 1.879a3 3 0 0 0-4.242 0L8.733 3.026l4.261 4.26 1.127-1.165a3 3 0 0 0 0-4.242ZM12.293 8 8.027 3.734 3.738 8.031 8 12.293 12.293 8Zm-5.006 4.994L3.03 8.737 1.879 9.88a3 3 0 0 0 4.241 4.24l.006-.006 1.16-1.121ZM2.679 7.676l6.492-6.504a4 4 0 0 1 5.66 5.653l-1.477 1.529-5.006 5.006-1.523 1.472a4 4 0 0 1-5.653-5.66l.001-.002 1.505-1.492.001-.002Z" />
+                <path
+                  d="M5.56 7.646a.5.5 0 1 1-.706.708.5.5 0 0 1 .707-.708Zm1.415-1.414a.5.5 0 1 1-.707.707.5.5 0 0 1 .707-.707ZM8.39 4.818a.5.5 0 1 1-.708.707.5.5 0 0 1 .707-.707Zm0 5.657a.5.5 0 1 1-.708.707.5.5 0 0 1 .707-.707ZM9.803 9.06a.5.5 0 1 1-.707.708.5.5 0 0 1 .707-.707Zm1.414-1.414a.5.5 0 1 1-.706.708.5.5 0 0 1 .707-.708ZM6.975 9.06a.5.5 0 1 1-.707.708.5.5 0 0 1 .707-.707ZM8.39 7.646a.5.5 0 1 1-.708.708.5.5 0 0 1 .707-.708Zm1.413-1.414a.5.5 0 1 1-.707.707.5.5 0 0 1 .707-.707Z" />
+              </svg>
+            </div>
+            <div class="media-body p-2 mt-3">
+              <h3 class="heading">Consultas</h3>
+              <p>Nuestra clinica te ofrece atencion de calidad a un bajo costo en servicios como Consulta Medica
+                General, Chequeos Medicos, Toma de Citologia, Toma de Tension Arterial, Toma de Electrocardiograma y
+                mas.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 d-flex align-self-stretch ftco-animate">
+          <div class="media block-6 services d-block text-center">
+            <div class="icon d-flex justify-content-center align-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                class="bi bi-journal-medical" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M8 4a.5.5 0 0 1 .5.5v.634l.549-.317a.5.5 0 1 1 .5.866L9 6l.549.317a.5.5 0 1 1-.5.866L8.5 6.866V7.5a.5.5 0 0 1-1 0v-.634l-.549.317a.5.5 0 1 1-.5-.866L7 6l-.549-.317a.5.5 0 0 1 .5-.866l.549.317V4.5A.5.5 0 0 1 8 4zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z" />
+                <path
+                  d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                <path
+                  d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+              </svg>
+            </div>
+            <div class="media-body p-2 mt-3">
+              <h3 class="heading">Controles</h3>
+              <p>Lleva tus controles y revisiones periodicas de salud para prevenir la aparicion de enfermedades y
+                detectar signos previos de alguna enfermedad y anomalias que pudieran aparecer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-wrap mt-5">
+      <div class="row d-flex no-gutters">
+        <div class="col-md-6 img" style="background-image: url(images/about-2.jpg);">
+        </div>
+        <div class="col-md-6 d-flex">
+          <div class="about-wrap">
+            <div class="heading-section heading-section-white mb-5 ftco-animate">
+              <h2 class="mb-2">Telemedicina</h2>
+              <p>Clinica La Bendicion de Dios ofrece la opción de consulta en línea o Telemedicina sin que usted tenga
+                que salir de casa desde su computadora o celular. Disponemos de Consulta General, Medicina Familiar y
+                Ginecología.</p>
+            </div>
+            <div class="list-services d-flex ftco-animate">
+              <div class="icon d-flex justify-content-center align-items-center">
+                <span class="icon-check2"></span>
+              </div>
+              <div class="text">
+                <h3>Consulta General</h3>
+                <p>Utilizando las herrramientas tecnologicas hacemos que tu consulta sea de manera comoda, practica y
+                  brindada por un profesional en medicina.</p>
+              </div>
+            </div>
+            <div class="list-services d-flex ftco-animate">
+              <div class="icon d-flex justify-content-center align-items-center">
+                <span class="icon-check2"></span>
+              </div>
+              <div class="text">
+                <h3>Medicina Familiar</h3>
+                <p>Gracias a la telemedicina no tendras que poner en riesgo la salud tuya y de tu familia. Brindamos
+                  atencion especializada desde la comodidad de tu hogar.</p>
+              </div>
+            </div>
+            <div class="list-services d-flex ftco-animate">
+              <div class="icon d-flex justify-content-center align-items-center">
+                <span class="icon-check2"></span>
+              </div>
+              <div class="text">
+                <h3>Ginecología</h3>
+                <p>Brindamos atencion ginecologica de diagnostico y consultas basicas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);"
+    data-stellar-background-ratio="0.5">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-md-3 aside-stretch py-5">
+          <div class=" heading-section heading-section-white ftco-animate pr-md-4">
+            <h2 class="mb-3">Logros</h2>
+            <p>En la Clinica La Bendicion de Dios estamos orgullosos de decir que contamos con una alta calidad y
+              experiencia que nos respalda</p>
+          </div>
+        </div>
+        <div class="col-md-9 py-5 pl-md-5">
+          <div class="row">
+            <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+              <div class="block-18">
+                <div class="text">
+                  <strong class="number" data-number="14">0</strong>
+                  <span>Años de experiencia</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+              <div class="block-18">
+                <div class="text">
+                  <strong class="number" data-number="300">0</strong>
+                  <span>Personal Calificado</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+              <div class="block-18">
+                <div class="text">
+                  <strong class="number" data-number="15463">0</strong>
+                  <span>Clientes Satisfechos</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+              <div class="block-18">
+                <div class="text">
+                  <strong class="number" data-number="967">0</strong>
+                  <span>Pacientes por año</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="precios"></div>
+  </section>
+
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-5">
+        <div class="col-md-7 text-center heading-section ftco-animate">
+          <h2 class="mb-3">Precios</h2>
+          <p>Precios pueden variar segun temporada.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 ftco-animate">
+          <div class="pricing-entry pb-5 text-center">
+            <div>
+              <h3 class="mb-4">Consulta General</h3>
+              <p><span class="price">$15.00</span> <span class="per">/ consulta</span></p>
+            </div>
+            <ul>
+              <li>Dolores</li>
+              <li>Infecciones</li>
+              <li>Accidentes</li>
+              <li>Control</li>
+              <li>Consultas</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 ftco-animate">
+          <div class="pricing-entry pb-5 text-center">
+            <div>
+              <h3 class="mb-4">Ginecología</h3>
+              <p><span class="price">$15.00</span> <span class="per">/ consulta</span></p>
+            </div>
+            <ul>
+              <li>Consulta general</li>
+              <li>Irregularidades menstruales</li>
+              <li>Infertilidad</li>
+              <li>Problemas de la piel como acné y aumento de vello</li>
+              <li>Infecciones ginecológicas</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 ftco-animate">
+          <div class="pricing-entry active pb-5 text-center">
+            <div>
+              <h3 class="mb-4">Gastroenterologia</h3>
+              <p><span class="price">$15.00</span> <span class="per">/ consulta</span></p>
+            </div>
+            <ul>
+              <li>Consulta general</li>
+              <li>Tratamiento de Várices Esofágicas</li>
+              <li>Prueba Respiratoria</li>
+              <li>PH Metría Esofágica</li>
+              <li>Gastrostomía Endoscópica Percutánea</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 ftco-animate">
+          <div class="pricing-entry pb-5 text-center">
+            <div>
+              <h3 class="mb-4">Dermatología</h3>
+              <p><span class="price">$15.00</span> <span class="per">/ consulta</span></p>
+            </div>
+            <ul>
+              <li>Lesiones de la piel</li>
+              <li>Enfermedades del cabello y las uñas</li>
+              <li>Acné</li>
+              <li>Reacciones a medicamentos</li>
+              <li>Extirpación quirúrgica</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section-parallax">
+    <div id="sobre-nosotros" class="parallax-img d-flex align-items-center">
+    </div>
+  </section>
+
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row d-md-flex">
+        <div class="col-md-6 ftco-animate img about-image order-md-last"
+          style="background-image: url(images/clinica2.png);">
+        </div>
+        <div class="col-md-6 ftco-animate pr-md-5 order-md-first">
+          <h2 class="mb-3">Sobre Nosotros</h2>
+          <div class="row">
+            <div class="col-md-12 nav-link-wrap mb-5">
+              <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-whatwedo-tab" data-toggle="pill" href="#v-pills-whatwedo"
+                  role="tab" aria-controls="v-pills-whatwedo" aria-selected="true">Historia</a>
+
+                <a class="nav-link" id="v-pills-mission-tab" data-toggle="pill" href="#v-pills-mission" role="tab"
+                  aria-controls="v-pills-mission" aria-selected="false">Misión</a>
+
+                <a class="nav-link" id="v-pills-goal-tab" data-toggle="pill" href="#v-pills-goal" role="tab"
+                  aria-controls="v-pills-goal" aria-selected="false">Visión</a>
+              </div>
+            </div>
+            <div class="col-md-12 d-flex align-items-center">
+
+              <div class="tab-content ftco-animate" id="v-pills-tabContent">
+
+                <div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel"
+                  aria-labelledby="v-pills-whatwedo-tab">
+                  <div>
+                    <h2 class="mb-4">Santa Ana, 1998</h2>
+                    <p>Insertar la historia de La Clinica La Bendición de Dios</p>
+                    <p>Dar mas detalles en esta sección</p>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="v-pills-mission" role="tabpanel" aria-labelledby="v-pills-mission-tab">
+                  <div>
+                    <h2 class="mb-4">Cuidar de nuestros pacientes</h2>
+                    <p>Insertar mision de La Clinica La Bendicion de Dios</p>
+                    <p>Dar mas detalles de la misión</p>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade" id="v-pills-goal" role="tabpanel" aria-labelledby="v-pills-goal-tab">
+                  <div>
+                    <h2 class="mb-4">Visión</h2>
+                    <p>Insertar Visión de la Clinica La Bendicion de Dios.</p>
+                    <p>Dar mas detalles de la visión</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section-parallax">
+    <div class="parallax-img d-flex align-items-center">
+    </div>
+  </section>
+
+  <section class="ftco-section testimony-section bg-light">
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 text-center heading-section ftco-animate">
+          <h2 class="mb-2">Testimonios</h2>
+          <span class="subheading">Algunos de nuestros clientes satisfechos</span>
+        </div>
+      </div>
+      <div class="row justify-content-center ftco-animate">
+        <div class="col-md-8">
+          <div class="carousel-testimony owl-carousel ftco-owl">
+            <div class="item">
+              <div class="testimony-wrap p-4 pb-5">
+                <div class="user-img mb-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
+                    class="bi bi-person-check" class="text text-center" viewBox="0 0 16 16">
+                    <path
+                      d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                    <path fill-rule="evenodd"
+                      d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                  </svg>
+                </div>
+                <div class="text text-center">
+                  <p class="mb-5">"Excelente servicio médico, accesibilidad económico para la ciudadanía, instalaciones
+                    asequibles y limpias, personal altamente preparado y con un gran trato humano, pagos en efectivo y
+                    en digital. Seguridad en las instalaciones, previene el covid al ingreso".</p>
+                  <p class="name">Ruben Sorto</p>
+                  <span class="position">Marzo, 2021</span>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimony-wrap p-4 pb-5">
+                <div class="user-img mb-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
+                    class="bi bi-person-check" class="text text-center" viewBox="0 0 16 16">
+                    <path
+                      d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                    <path fill-rule="evenodd"
+                      d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                  </svg>
+                </div>
+                <div class="text text-center">
+                  <p class="mb-5">"He ido a Dermatología y me han brindado un excelente servicio, aparte que el equipo
+                    es muy moderno, también he hecho uso del laboratorio y los exámenes me los han entregado rápido".
+                  </p>
+                  <p class="name">Karla Hernandez</p>
+                  <span class="position">Julio, 2022</span>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimony-wrap p-4 pb-5">
+                <div class="user-img mb-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
+                    class="bi bi-person-check" class="text text-center" viewBox="0 0 16 16">
+                    <path
+                      d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                    <path fill-rule="evenodd"
+                      d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                  </svg>
+                </div>
+                <div class="text text-center">
+                  <p class="mb-5">"Una bendición este lugar, realmente son excelentes los doctores, el trato al paciente
+                    es maravilloso, y todo por un precio muy bajo a comparación de otras partes".</p>
+                  <p class="name">Oscar Perez</p>
+                  <span class="position">Septiembre, 2021</span>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimony-wrap p-4 pb-5">
+                <div class="user-img mb-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
+                    class="bi bi-person-check" class="text text-center" viewBox="0 0 16 16">
+                    <path
+                      d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                    <path fill-rule="evenodd"
+                      d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                  </svg>
+                </div>
+                <div class="text text-center">
+                  <p class="mb-5">"La clínica es bastante moderna y limpia. Cuentan con varios especialistas y lo que
+                    mas me gusta es que todo el personal es bastante amable y tratan bien a los pacientes".</p>
+                  <p class="name">Jocelyn Galdámez</p>
+                  <span class="position">Enero, 2019</span>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimony-wrap p-4 pb-5">
+                <div class="user-img mb-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
+                    class="bi bi-person-check" class="text text-center" viewBox="0 0 16 16">
+                    <path
+                      d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                    <path fill-rule="evenodd"
+                      d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+                  </svg>
+                </div>
+                <div class="text text-center">
+                  <p class="mb-5">"Es una clínica muy completa, hay varios especialistas, laboratorio y odontología. Si
+                    no tienes cita se recomienda llegar muy temprano, las personas comienzan hacer cola tipo 5 am, sino
+                    deben esperar. Tienen muy buenos profesionales".</p>
+                  <p class="name">Johanna Morales</p>
+                  <span class="position">Abril, 2022</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-gallery">
+    <div class="container-wrap">
+      <div class="row no-gutters">
+        <div class="col-md-3 ftco-animate">
+          <a href="#" class="gallery img d-flex align-items-center"
+            style="background-image: url(images/Consulta_Medica.jpg);">
+            <div class="icon mb-4 d-flex align-items-center justify-content-center">
+              <span class="icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-3 ftco-animate">
+          <a href="#" class="gallery img d-flex align-items-center"
+            style="background-image: url(images/consulta_med.jpg);">
+            <div class="icon mb-4 d-flex align-items-center justify-content-center">
+              <span class="icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-3 ftco-animate">
+          <a href="#" class="gallery img d-flex align-items-center"
+            style="background-image: url(images/gastroenterologia-img.jpg);">
+            <div class="icon mb-4 d-flex align-items-center justify-content-center">
+              <span class="icon-search"></span>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-3 ftco-animate">
+          <a href="#" class="gallery img d-flex align-items-center"
+            style="background-image: url(images/revision-ginecologica.jpg);">
+            <div class="icon mb-4 d-flex align-items-center justify-content-center">
+              <span class="icon-search"></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ftco-section">
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-3">
+        <div class="col-md-7 text-center heading-section ftco-animate">
+          <h2 class="mb-2">Encuentranos</h2>
+          <p>Estamos ubicados en Colonia Rabida, Santa Ana, El Salvador</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div id="map"></div>
+
+  <footer class="ftco-footer ftco-bg-dark ftco-section">
+    <div id="contactanos" class="container">
+      <div class="row mb-5">
+        <div class="col-md-3">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Clinia La Bendicion de Dios</h2>
+            <p>"He aquí que yo les traeré sanidad y medicina; y los curaré, y les revelaré abundancia de paz y de verdad
+              (Jeremías 33:6)".</p>
+          </div>
+          <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
+            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Contactanos</h2>
+            <div class="block-23 mb-3">
+              <ul>
+                <li><span class="icon icon-map-marker"></span><span class="text">Colonia Rabida, Santa Ana, El
+                    Salvador</span></li>
+                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+ (503) 2234-4444</span></a>
+                </li>
+                <li><a href="#"><span class="icon icon-envelope"></span><span
+                      class="text">citas@clinicalabendiciondedios.com</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+
+          <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;
+            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
+            <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#F96D00" />
+    </svg></div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalRequest" tabindex="-1" role="dialog" aria-labelledby="modalRequestLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalRequestLabel">Haz una cita</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="#">
+            <div class="select-wrap">
+              <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+              <select name="" id="" class="form-control">
+                <option value="">Departamento</option>
+                <option value="">Emergencias</option>
+                <option value="">Diagnosticos</option>
+                <option value="">Consultas</option>
+                <option value="">Controles</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
+              <input type="text" class="form-control" id="appointment_name" placeholder="Nombre Completo">
+            </div>
+            <div class="form-group">
+              <!-- <label for="appointment_email" class="text-black">Email</label> -->
+              <input type="text" class="form-control" id="appointment_email" placeholder="Email">
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <!-- <label for="appointment_date" class="text-black">Date</label> -->
+                  <input type="text" class="form-control appointment_date" placeholder="Fecha">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <!-- <label for="appointment_time" class="text-black">Time</label> -->
+                  <input type="text" class="form-control appointment_time" placeholder="Hora">
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <!-- <label for="appointment_message" class="text-black">Message</label> -->
+              <textarea name="" id="appointment_message" class="form-control" cols="30" rows="10"
+                placeholder="Detalle"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Guardar Cita" class="btn btn-primary">
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
