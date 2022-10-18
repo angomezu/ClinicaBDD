@@ -185,6 +185,15 @@
                         <button  class="btn-label"  style="display: flex;justify-content: center;align-items: center;"><img src="../img/calendar.svg" width="100%"></button>
                     </td>
 
+                    <tr>
+                    <td colspan="4" >
+                        <div style="display: flex;margin-top: 40px;">
+                        <div class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49);margin-top: 5px;">Nueva Consulta</div>
+                        <a href="?action=add-precord&id=none&error=0" class="non-style-link"><button  class="login-btn btn-primary btn button-icon"  style="margin-left:25px;background-image: url('../img/icons/add.svg');">Añadir Consulta</font></button>
+                        </a>
+                        </div>
+                    </td>
+                </tr>
 
                 </tr>
                
@@ -319,7 +328,7 @@
                                         <td >
                                         <div style="display:flex;justify-content: center;">
                                         
-                                        <a href="?action=view&id='.$pid.'" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-view"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">View</font></button></a>
+                                        <a href="?action=view&id='.$pid.'" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-view"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Perfil</font></button></a>
                                        
                                         </div>
                                         </td>
@@ -343,12 +352,181 @@
             </table>
         </div>
     </div>
-    <?php 
+    
+    <?php
+    
     if($_GET){
-        
         $id=$_GET["id"];
         $action=$_GET["action"];
+        if($action=='add-precord'){
+
+            echo '
+            <div id="popup1" class="overlay">
+                    <div class="popup">
+                    <center>
+                    
+                    
+                        <a class="close" href="patient.php">&times;</a> 
+                        <div style="display: flex;justify-content: center;">
+                        <div class="abc">
+                        <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
+                        <tr>
+                                <td class="label-td" colspan="2">'.
+                                   ""
+                                
+                                .'</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Añadir una Nueva Consulta</p><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                <form action="add-precord.php" method="POST" class="add-new-form">
+                                    <label for="name" class="form-label">ID de paciente: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                    <input type="text" name="id" class="input-text" placeholder="ID de paciente" required><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                
+                                <td class="label-td" colspan="2">
+                                    <label for="docid" class="form-label">Seleccionar Doctor: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                    <select name="docid" id="" class="box" >
+                                    <option value="" disabled selected hidden>Escoger nombre de Doctor dentro de la lista</option><br/>';
+                                        
+        
+                                        $list11 = $database->query("select  * from  doctor order by docname asc;");
+        
+                                        for ($y=0;$y<$list11->num_rows;$y++){
+                                            $row00=$list11->fetch_assoc();
+                                            $sn=$row00["docname"];
+                                            $id00=$row00["docid"];
+                                            echo "<option value=".$id00.">$sn</option><br/>";
+                                        };
+        
+        
+        
+                                        
+                        echo     '       </select><br><br>
+                                </td>
+                            </tr>
+                            <tr>
+                             <td class="label-td" colspan="2">
+                                    <label for="diagnosis" class="form-label">Síntomas: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                <textarea name="symptoms" class="input-text" min="0" cols="40" rows="5" placeholder="Inserte síntomas del paciente" required></textarea>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                            <td class="label-td" colspan="2">
+                                    <label for="diagnosis" class="form-label">Diagnóstico: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                <textarea name="diagnosis" class="input-text" min="0" cols="40" rows="5" placeholder="Inserte diagnóstico" required></textarea>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                            <td class="label-td" colspan="2">
+                                    <label for="diagnosis" class="form-label">Receta: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                <textarea name="prescription" class="input-text" min="0" cols="40" rows="5" placeholder="Inserte receta" required></textarea>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                    <label for="date" class="form-label">Fecha de Diagnóstico: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                    <input type="date" name="date" class="input-text" min="'.date('Y-m-d').'" required><br>
+                                </td>
+                            </tr>    
+                            <tr>
+                                <td colspan="2">
+                                    <input type="reset" value="Limpiar Datos" class="login-btn btn-primary-soft btn" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                
+                                    <input type="submit" value="Añadir Consulta" class="login-btn btn-primary btn" name="shedulesubmit">
+                                </td>
+                
+                            </tr>
+                           
+                            </form>
+                            </tr>
+                        </table>
+                        </div>
+                        </div>
+                    </center>
+                    <br><br>
+            </div>
+            </div>
+            ';
+        }elseif($action=='precord-added'){
+            echo '
+            <div id="popup1" class="overlay">
+                    <div class="popup">
+                    <center>
+                    <br><br>
+                        <h2>Record Añadido.</h2>
+                        <a class="close" href="patient.php">&times;</a>
+                        <div class="content">
+                        Diagnostico ha sido añadido.<br><br>
+                            
+                        </div>
+                        <div style="display: flex;justify-content: center;">
+                        
+                        <a href="patient.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;OK&nbsp;&nbsp;</font></button></a>
+                        <br><br><br><br>
+                        </div>
+                    </center>
+            </div>
+            </div>
+            ';
+        }elseif($action=='drop'){
+            $nameget=$_GET["id"];
+            echo '
+            <div id="popup1" class="overlay">
+                    <div class="popup">
+                    <center>
+                        <h2>¡ALERTA!</h2>
+                        <a class="close" href="patient.php">&times;</a>
+                        <div class="content">
+                            ¿Seguro que quieres eliminar los records? <br><br>'.substr($nameget,0,40).'.<br><br>
+                            
+                        </div>
+                        <div style="display: flex;justify-content: center;">
+                        <a href="delete-precord.php?id='.$id.'" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"<font class="tn-in-text">&nbsp;Continuar&nbsp;</font></button></a>&nbsp;&nbsp;&nbsp;
+                        <a href="patient.php" class="non-style-link"><button  class="btn-primary btn"  style="display: flex;justify-content: center;align-items: center;margin:10px;padding:10px;"><font class="tn-in-text">&nbsp;&nbsp;Cancelar&nbsp;&nbsp;</font></button></a>
+
+                        </div>
+                    </center>
+            </div>
+            </div>
+            '; 
+        }elseif($action=='view'){
             $sqlmain= "select * from patient where pid='$id'";
+            $sqlmain= 
             $result= $database->query($sqlmain);
             $row=$result->fetch_assoc();
             $name=$row["pname"];
@@ -357,109 +535,222 @@
             $dob=$row["pdob"];
             $tele=$row["ptel"];
             $address=$row["paddress"];
+
+
+            $sqlmain12= "select * from precords inner join patient on patient.pid=precords.pid inner join doctor on doctor.docid=precords.docid where patient.pid=$id;";
+            #$sqlmain12= "select precords.precordid,precords.symptoms,doctor.docname,precords.diagnosis,precords.prescription,precords.prescription_date from precords inner join doctor on precords.docid=doctor.docid  where  precords.precordid=$id";
+            $result12= $database->query($sqlmain12);
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                    <div class="popup" style="width: 70%;">
                     <center>
+                        <h2></h2>
                         <a class="close" href="patient.php">&times;</a>
                         <div class="content">
-
+                            
+                            
                         </div>
-                        <div style="display: flex;justify-content: center;">
+                        <div class="abc scroll" style="display: flex;justify-content: center;">
                         <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
                         
                             <tr>
                                 <td>
-                                    <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Ver Detalles</p><br><br>
+                                    <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Detalles</p><br><br>
                                 </td>
                             </tr>
                             <tr>
                                 
-                                <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">ID de Paciente: </label>
-                                </td>
-                            </tr>
+                            <td class="label-td" colspan="2">
+                                <label for="name" class="form-label">ID de paciente: </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-td" colspan="2">
+                                P-'.$id.'<br><br>
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            
+                            <td class="label-td" colspan="2">
+                                <label for="name" class="form-label">Nombre: </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-td" colspan="2">
+                                '.$name.'<br><br>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="label-td" colspan="2">
+                                <label for="Email" class="form-label">Email: </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-td" colspan="2">
+                            '.$email.'<br><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-td" colspan="2">
+                                <label for="nic" class="form-label">DUI: </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-td" colspan="2">
+                            '.$nic.'<br><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-td" colspan="2">
+                                <label for="Tele" class="form-label">Telefono: </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-td" colspan="2">
+                            '.$tele.'<br><br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-td" colspan="2">
+                                <label for="spec" class="form-label">Dirección: </label>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                        <td class="label-td" colspan="2">
+                        '.$address.'<br><br>
+                        </td>
+                        </tr>
+                        <tr>
+                            
+                            <td class="label-td" colspan="2">
+                                <label for="name" class="form-label">Fecha de Nacimiento: </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label-td" colspan="2">
+                                '.$dob.'<br><br>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a href="patient.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
+                            
+                                
+                            </td>
+            
+                        </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    P-'.$id.'<br><br>
+                                    <label for="spec" class="form-label"><b>Historial del Paciente:</b></label>
+                                    <br><br>
                                 </td>
-                                
                             </tr>
+
                             
                             <tr>
-                                
-                                <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Nombre: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    '.$name.'<br><br>
-                                </td>
-                                
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="Email" class="form-label">Email: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                '.$email.'<br><br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="nic" class="form-label">DUI: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                '.$nic.'<br><br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="Tele" class="form-label">Teléfono: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                '.$tele.'<br><br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    <label for="spec" class="form-label">Dirección: </label>
-                                    
-                                </td>
-                            </tr>
-                            <tr>
-                            <td class="label-td" colspan="2">
-                            '.$address.'<br><br>
-                            </td>
-                            </tr>
-                            <tr>
-                                
-                                <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Fecha de Nacimiento: </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="label-td" colspan="2">
-                                    '.$dob.'<br><br>
-                                </td>
-                                
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <a href="patient.php"><input type="button" value="OK" class="login-btn btn-primary-soft btn" ></a>
-                                
-                                    
-                                </td>
+                            <td colspan="4">
+                                <center>
+                                 <div class="abc scroll">
+                                 <table width="100%" class="sub-table scrolldown" border="0">
+                                 <thead>
+                                 <tr>   
+                                        <th class="table-headin">
+                                             ID de Consulta
+                                         </th>
+                                         <th class="table-headin">
+                                             Síntomas
+                                         </th>
+                                         <th class="table-headin">  
+                                             Diagnóstico 
+                                         </th>
+                                         <th class="table-headin">  
+                                             Receta
+                                         </th>
+                                         <th class="table-headin">  
+                                             Doctor
+                                         </th>
+                                         <th class="table-headin">
+                                             Fecha de Diagnóstico
+                                         </th>
+                                         
+                                 </thead>
+                                 <tbody>';
+                                 
                 
-                            </tr>
-                           
+                
+                                         
+                                         $result= $database->query($sqlmain12);
+                
+                                         if($result->num_rows==0){
+                                             echo '<tr>
+                                             <td colspan="7">
+                                             <br><br><br><br>
+                                             <center>
+                                             <img src="../img/notfound.svg" width="25%">
+                                             
+                                             <br>
+                                             <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Este paciente aún no cuenta con diagnósticos.</p>
+                                             </a>
+                                             </center>
+                                             <br><br><br><br>
+                                             </td>
+                                             </tr>';
+                                             
+                                         }
+                                         else{
+                                         for ( $x=0; $x<$result->num_rows;$x++){
+                                             $row=$result->fetch_assoc();
+                                             $docname=$row["docname"];
+                                             $precordid=$row["precordid"];
+                                             $symptoms=$row["symptoms"];
+                                             $diagnosis=$row["diagnosis"];
+                                             $prescription=$row["prescription"];
+                                             $prescription_date=$row["prescription_date"];
+                                             
+                                             echo '<tr style="text-align:center;">
+                                                <td>
+                                                '.substr($precordid,0,15).'
+                                                </td>
+
+                                                 <td style="font-weight:600;padding:25px">
+                                                 '.substr($symptoms,0,25).'
+                                                 </td >
+
+                                                 <td style="font-weight:600;padding:25px">
+                                                 '.substr($diagnosis,0,25).'
+                                                 </td >
+
+                                                 <td style="font-weight:600;padding:25px">
+                                                 '.substr($prescription,0,25).'
+                                                 </td >
+
+                                                 <td style="font-weight:600;padding:25px">
+                                                 '.substr($docname,0,25).'
+                                                 </td >
+
+                                                 <td style="font-weight:600;padding:25px">
+                                                 '.substr($prescription_date,0,25).'
+                                                 </td >
+                                                 
+                                             </tr>';
+                                             
+                                         }
+                                     }
+                                          
+                                     
+                
+                                    echo '</tbody>
+                
+                                 </table>
+                                 </div>
+                                 </center>
+                            </td> 
+                         </tr>
 
                         </table>
                         </div>
@@ -467,11 +758,11 @@
                     <br><br>
             </div>
             </div>
-            ';
+            ';  
+    }
+}
         
-    };
-
-?>
+    ?>
 </div>
 
 </body>
