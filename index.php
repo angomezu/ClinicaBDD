@@ -73,7 +73,7 @@
   <!-- END nav -->
 
   <section class="home-slider owl-carousel">
-    <div id="inicio" class="slider-item" style="background-image: url('images/bg_1.jpg');">
+    <div id="inicio" class="slider-item" style="background-image: url('images/hospitalsv6.jpg');">
       <div class="overlay"></div>
       <div class="container">
         <div class="row slider-text align-items-center" data-scrollax-parent="true">
@@ -88,7 +88,7 @@
       </div>
     </div>
 
-    <div class="slider-item" style="background-image: url('images/bg_2.jpg');">
+    <div class="slider-item" style="background-image: url('images/hospitalsv1.png');">
       <div class="overlay"></div>
       <div class="container">
         <div class="row slider-text align-items-center" data-scrollax-parent="true">
@@ -216,7 +216,7 @@
     </div>
     <div class="container-wrap mt-5">
       <div class="row d-flex no-gutters">
-        <div class="col-md-6 img" style="background-image: url(images/about-2.jpg);">
+        <div class="col-md-6 img" style="background-image: url(images/hospitalsv4.jpg);">
         </div>
         <div class="col-md-6 d-flex">
           <div class="about-wrap">

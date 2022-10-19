@@ -240,16 +240,16 @@
                                                             Detalles de la Sesión
                                                         </div><br><br>
                                                         <div class="h3-search" style="font-size:18px;line-height:30px">
-                                                            Nombre del Doctor:  &nbsp;&nbsp;<b>'.$docname.'</b><br>
-                                                            Email del Doctor:  &nbsp;&nbsp;<b>'.$docemail.'</b> 
+                                                            Nombre del Doctor:  &nbsp;&nbsp;<b>'.$docname.'</b><br><br>
+                                                            Email del Doctor:  &nbsp;&nbsp;<b>'.$docemail.'</b><br>
                                                         </div>
                                                         <div class="h3-search" style="font-size:18px;">
                                                           
                                                         </div><br>
                                                         <div class="h3-search" style="font-size:18px;">
-                                                            Nombre de la Sesión: '.$title.'<br>
-                                                            Fecha Agendada de la Sesión: '.$scheduledate.'<br>
-                                                            Hora Inicial de la Sesión: '.$scheduletime.'<br>
+                                                            Nombre de la Sesión: '.$title.'<br><br>
+                                                            Fecha Agendada de la Sesión: '.$scheduledate.'<br><br>
+                                                            Hora de la Cita: <input type="time" name="time" class="input-text" placeholder="Hora" required><br>
                                                             Precio por Consulta: <b>$15.00 USD</b>
 
                                                         </div>

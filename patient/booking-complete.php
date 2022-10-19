@@ -23,18 +23,21 @@
     $userid= $userfetch["pid"];
     $username=$userfetch["pname"];
 
-
+    include("../connection.php");
     if($_POST){
         if(isset($_POST["booknow"])){
             $apponum=$_POST["apponum"];
             $scheduleid=$_POST["scheduleid"];
             $date=$_POST["date"];
             $scheduleid=$_POST["scheduleid"];
-            $sql2="insert into appointment(pid,apponum,scheduleid,appodate) values ($userid,$apponum,$scheduleid,'$date')";
+            $time=$_POST["time"];
+   
+            $sql2="insert into appointment(pid,apponum,scheduleid,appodate,appotime) values ($userid,$apponum,$scheduleid,'$date','$time')";
             $result= $database->query($sql2);
-            //echo $apponom;
+            echo $apponom;
             header("location: appointment.php?action=booking-added&id=".$apponum."&titleget=none");
 
         }
     }
  ?>
+
