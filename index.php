@@ -320,8 +320,8 @@
     <div class="container">
       <div class="row justify-content-center mb-5 pb-5">
         <div class="col-md-7 text-center heading-section ftco-animate">
-          <h2 class="mb-3">Precios</h2>
-          <p>Precios pueden variar segun temporada.</p>
+          <h2 class="mb-3">Algunos de Nuestros </h2> <h2>Departamentos y Especialidades</h2>
+          <p> Para ver todos los departamentos y especialidades disponibles inicie sesión <a href="login.php" class="hover-link1 non-style-link"> aquí.</a></p>
         </div>
       </div>
       <div class="row">
@@ -329,7 +329,7 @@
           <div class="pricing-entry pb-5 text-center">
             <div>
               <h3 class="mb-4">Consulta General</h3>
-              <p><span class="price">$15.00</span> <span class="per">/ consulta</span></p>
+              <!--<p><span class="price">$15.00</span> <span class="per">/ consulta</span></p>-->
             </div>
             <ul>
               <li>Dolores</li>
@@ -344,7 +344,7 @@
           <div class="pricing-entry pb-5 text-center">
             <div>
               <h3 class="mb-4">Ginecología</h3>
-              <p><span class="price">$15.00</span> <span class="per">/ consulta</span></p>
+              <!--<p><span class="price">$15.00</span> <span class="per">/ consulta</span></p>-->
             </div>
             <ul>
               <li>Consulta general</li>
@@ -359,7 +359,7 @@
           <div class="pricing-entry active pb-5 text-center">
             <div>
               <h3 class="mb-4">Gastroenterologia</h3>
-              <p><span class="price">$15.00</span> <span class="per">/ consulta</span></p>
+              <!--<p><span class="price">$15.00</span> <span class="per">/ consulta</span></p>-->
             </div>
             <ul>
               <li>Consulta general</li>
@@ -374,7 +374,7 @@
           <div class="pricing-entry pb-5 text-center">
             <div>
               <h3 class="mb-4">Dermatología</h3>
-              <p><span class="price">$15.00</span> <span class="per">/ consulta</span></p>
+              <!--<p><span class="price">$15.00</span> <span class="per">/ consulta</span></p>-->
             </div>
             <ul>
               <li>Lesiones de la piel</li>
@@ -421,26 +421,31 @@
 
                 <div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel"
                   aria-labelledby="v-pills-whatwedo-tab">
+                  <style>
+                    div {
+                    text-align: justify;
+                    text-justify: inter-word;
+                        }
+</style>
                   <div>
-                    <h2 class="mb-4">Santa Ana, 1998</h2>
-                    <p>Insertar la historia de La Clinica La Bendición de Dios</p>
-                    <p>Dar mas detalles en esta sección</p>
+                    <h2 class="mb-4">Nuestra Historia</h2>
+                    <p>Somos una clínica con más de 10 años de experiencia, fundada en 2008, ubicada en el centro de Nejapa, que nació con el objetivo de velar por la salud e integridad de sus pacientes, y brindar el mejor servicio posible, sobre todo a los habitantes del municipio de Nejapa, que es el municipio de residencia de la Dra. Fundadora de la clínica, por lo que le tiene mucho aprecio al lugar y a su gente. 
+La clínica está creciendo continuamente por lo que se busca agilizar algunos procesos por medio de esta plataforma, a manera de brindar un mejor servicio para todos nuestros pacientes. 
+</p>
                   </div>
                 </div>
 
                 <div class="tab-pane fade" id="v-pills-mission" role="tabpanel" aria-labelledby="v-pills-mission-tab">
                   <div>
-                    <h2 class="mb-4">Cuidar de nuestros pacientes</h2>
-                    <p>Insertar mision de La Clinica La Bendicion de Dios</p>
-                    <p>Dar mas detalles de la misión</p>
+                    <h2 class="mb-4">Nuestro Compromiso</h2>
+                    <p>Brindar atención médica de excelencia, con calidez, a través de un equipo de salud comprometido con la capacitación y la innovación tecnológica, cumpliendo con los más altos estándares de calidad y seguridad y logrando la máxima satisfacción de los pacientes.</p>
                   </div>
                 </div>
 
                 <div class="tab-pane fade" id="v-pills-goal" role="tabpanel" aria-labelledby="v-pills-goal-tab">
                   <div>
-                    <h2 class="mb-4">Visión</h2>
-                    <p>Insertar Visión de la Clinica La Bendicion de Dios.</p>
-                    <p>Dar mas detalles de la visión</p>
+                    <h2 class="mb-4">Nuestro Futuro</h2>
+                    <p>Convertirnos en una clínica líder en el municipio de Nejapa y de la zona central del país, por la calidad asistencial, seguridad y satisfacción del paciente.</p>
                   </div>
                 </div>
               </div>
@@ -507,8 +512,8 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalRequestLabel"><label for="" class="sub-text" style="font-weight: 280;">Para agendar una cita primero debe de </label>
-           <a href="login.php" class="hover-link1 non-style-link">Iniciar Sesión</a><a &nbsp> o </a><a href="signup.php" class="hover-link1 non-style-link">Crear una Cuenta</a></h5>
+          <h5 class="modal-title" id="modalRequestLabel"><p>Para agendar una cita primero debe de <a href="login.php" class="hover-link1 non-style-link">Iniciar Sesión</a><a &nbsp> o </a><a href="signup.php" class="hover-link1 non-style-link">Crear una Cuenta.</a></h5></p>
+           
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
