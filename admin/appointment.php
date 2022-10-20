@@ -77,7 +77,7 @@
                 </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-schedule ">
-                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Sesiones</p></div></a>
+                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Turnos</p></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row">
@@ -213,7 +213,7 @@
                         }
                         //echo $sqlpt2;
                         //echo $sqlpt1;
-                        $sqlmain= "select appointment.appoid,schedule.scheduleid,schedule.title,doctor.docname,patient.pname,schedule.scheduledate,schedule.scheduletime,appointment.apponum,appointment.appodate from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join patient on patient.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid";
+                        $sqlmain= "select appointment.appoid,schedule.scheduleid,schedule.title,doctor.docname,patient.pname,schedule.scheduledate,schedule.scheduletime,appointment.apponum,appointment.appodate, appointment.appotime from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join patient on patient.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid";
                         $sqllist=array($sqlpt1,$sqlpt2);
                         $sqlkeywords=array(" where "," and ");
                         $key2=0;
@@ -230,7 +230,7 @@
                         
                         //
                     }else{
-                        $sqlmain= "select appointment.appoid,schedule.scheduleid,schedule.title,doctor.docname,patient.pname,schedule.scheduledate,schedule.scheduletime,appointment.apponum,appointment.appodate from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join patient on patient.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid  order by schedule.scheduledate desc";
+                        $sqlmain= "select appointment.appoid,schedule.scheduleid,schedule.title,doctor.docname,patient.pname,schedule.scheduledate,schedule.scheduletime,appointment.apponum,appointment.appodate, appointment.appotime from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join patient on patient.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid  order by schedule.scheduledate desc";
 
                     }
 
@@ -261,13 +261,13 @@
                                 <th class="table-headin">
                                     
                                 
-                                    Nombre de la Sesión
+                                    Nombre del Turno
                                     
                                     </th>
                                 
                                 <th class="table-headin">
                                     
-                                    Hora de la Sesión
+                                    Fecha y Hora del Turno
                                     
                                 </th>
                                 
@@ -276,10 +276,16 @@
                                     Fecha Agendada
                                     
                                 </th>
+
+                                <th class="table-headin">
+                                    
+                                    Hora Agendada
+                                    
+                                </th>
                                 
                                 <th class="table-headin">
                                     
-                                    Eventos
+                                    Acciones
                                     
                                 </tr>
                         </thead>
@@ -319,6 +325,7 @@
                                     $pname=$row["pname"];
                                     $apponum=$row["apponum"];
                                     $appodate=$row["appodate"];
+                                    $appotime=$row["appotime"];
                                     echo '<tr >
                                         <td style="font-weight:600;"> &nbsp;'.
                                         
@@ -340,6 +347,9 @@
                                         
                                         <td style="text-align:center;">
                                             '.$appodate.'
+                                        </td>
+                                        <td style="text-align:center;">
+                                            '.$appotime.'
                                         </td>
 
                                         <td>
@@ -396,18 +406,18 @@
 
                             <tr>
                                 <td>
-                                    <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Agregar una nueva Sesión.</p><br>
+                                    <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Agregar un nuevo Turno.</p><br>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
                                 <form action="add-session.php" method="POST" class="add-new-form">
-                                    <label for="title" class="form-label">Nombre de la Sesión : </label>
+                                    <label for="title" class="form-label">Nombre del Turno : </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="text" name="title" class="input-text" placeholder="Nombre de la Sesión" required><br>
+                                    <input type="text" name="title" class="input-text" placeholder="Nombre del Turno" required><br>
                                 </td>
                             </tr>
                             <tr>
@@ -444,12 +454,12 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="number" name="nop" class="input-text" min="0"  placeholder="La cantidad final de pacientes por sesión se determina por este número" required><br>
+                                    <input type="number" name="nop" class="input-text" min="0"  placeholder="La cantidad final de pacientes por Turno se determina por este número" required><br>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="date" class="form-label">Fecha de la Sesión: </label>
+                                    <label for="date" class="form-label">Fecha del Turno: </label>
                                 </td>
                             </tr>
                             <tr>
@@ -459,7 +469,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="time" class="form-label">Hora Inicial de la Sesión: </label>
+                                    <label for="time" class="form-label">Hora Inicial del Turno: </label>
                                 </td>
                             </tr>
                             <tr>
@@ -472,7 +482,7 @@
                                 <td colspan="2">
                                     <input type="reset" value="Limpiar Datos" class="login-btn btn-primary-soft btn" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 
-                                    <input type="submit" value="Crear Sesión" class="login-btn btn-primary btn" name="shedulesubmit">
+                                    <input type="submit" value="Crear Turno" class="login-btn btn-primary btn" name="shedulesubmit">
                                 </td>
                 
                             </tr>
@@ -494,7 +504,7 @@
                     <div class="popup">
                     <center>
                     <br><br>
-                        <h2>Sesión Creada.</h2>
+                        <h2>Turno Creado.</h2>
                         <a class="close" href="schedule.php">&times;</a>
                         <div class="content">
                         '.substr($titleget,0,40).' fue agendada con éxito.<br><br>

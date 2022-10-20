@@ -91,7 +91,7 @@
                 
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-session menu-active menu-icon-session-active">
-                        <a href="schedule.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Sesiones Disponibles</p></div></a>
+                        <a href="schedule.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Agendar una Cita</p></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row" >
@@ -180,7 +180,7 @@
                     </td>
                     <td width="15%">
                         <p style="font-size: 14px;color: rgb(119, 119, 119);padding: 0;margin: 0;text-align: right;">
-                            Today's Date
+                            Fecha Actual
                         </p>
                         <p class="heading-sub12" style="padding: 0;margin: 0;">
                             <?php 
@@ -200,10 +200,11 @@
 
                 </tr>
                 
+               
                 
                 <tr>
                     <td colspan="4" style="padding-top:10px;width: 100%;" >
-                        <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)"><?php echo $searchtype." Sesiones: "."".$result->num_rows.""; ?> </p>
+                        <p class="heading-main12" style="font-size: 23px;margin-left: 45px;padding-left:12px;font-weight: 600;"><?php echo $searchtype." Sesiones Disponibles: "."".$result->num_rows.""; ?> </p>
                         <p class="heading-main12" style="margin-left: 45px;font-size:22px;color:rgb(49, 49, 49)"><?php echo $q.$insertkey.$q ; ?> </p>
                     </td>
                     
@@ -255,6 +256,7 @@
                                         $docname=$row["docname"];
                                         $scheduledate=$row["scheduledate"];
                                         $scheduletime=$row["scheduletime"];
+                                        $scheduleendtime=$row["scheduleendtime"];
 
                                         if($scheduleid==""){
                                             break;
@@ -272,7 +274,7 @@
                                                                 '.substr($docname,0,30).'
                                                             </div>
                                                             <div class="h4-search">
-                                                                '.$scheduledate.'<br>Hora de Inicio: <b>'.substr($scheduletime,0,5).'</b> (24h)
+                                                                '.$scheduledate.'<br>Hora de Inicio: <b>'.substr($scheduletime,0,5).'</b> (24h)<br>Hora de Finalización: <b>'.substr($scheduleendtime,0,5).'</b> (24h)
                                                             </div>
                                                             <br>
                                                             <a href="booking.php?id='.$scheduleid.'" ><button  class="login-btn btn-primary-soft btn "  style="padding-top:11px;padding-bottom:11px;width:100%"><font class="tn-in-text">Agendar Cita</font></button></a>

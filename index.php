@@ -82,7 +82,7 @@
               profesionales a tu servicio</h1>
             <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">¿Tienes alguna consulta?</p>
             <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#"
-                class="btn btn-primary px-4 py-3" data-toggle="modal" data-target="#modalRequest">Contáctanos</a></p>
+                class="btn btn-primary px-4 py-3" data-toggle="modal" data-target="#modalRequest">Haz una cita</a></p>
           </div>
         </div>
       </div>
@@ -451,178 +451,8 @@
     </div>
   </section>
 
-  <section class="ftco-section-parallax">
-    <div class="parallax-img d-flex align-items-center">
-    </div>
-  </section>
-
-  <section class="ftco-section testimony-section bg-light">
-    <div class="container">
-      <div class="row justify-content-center mb-5 pb-3">
-        <div class="col-md-7 text-center heading-section ftco-animate">
-          <h2 class="mb-2">Testimonios</h2>
-          <span class="subheading">Algunos de nuestros clientes satisfechos</span>
-        </div>
-      </div>
-      <div class="row justify-content-center ftco-animate">
-        <div class="col-md-8">
-          <div class="carousel-testimony owl-carousel ftco-owl">
-            <div class="item">
-              <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
-                    class="bi bi-person-check" class="text text-center" viewBox="0 0 16 16">
-                    <path
-                      d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                    <path fill-rule="evenodd"
-                      d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                  </svg>
-                </div>
-                <div class="text text-center">
-                  <p class="mb-5">"Excelente servicio médico, accesibilidad económico para la ciudadanía, instalaciones
-                    asequibles y limpias, personal altamente preparado y con un gran trato humano, pagos en efectivo y
-                    en digital. Seguridad en las instalaciones, previene el covid al ingreso".</p>
-                  <p class="name">Ruben Sorto</p>
-                  <span class="position">Marzo, 2021</span>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
-                    class="bi bi-person-check" class="text text-center" viewBox="0 0 16 16">
-                    <path
-                      d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                    <path fill-rule="evenodd"
-                      d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                  </svg>
-                </div>
-                <div class="text text-center">
-                  <p class="mb-5">"He ido a Dermatología y me han brindado un excelente servicio, aparte que el equipo
-                    es muy moderno, también he hecho uso del laboratorio y los exámenes me los han entregado rápido".
-                  </p>
-                  <p class="name">Karla Hernandez</p>
-                  <span class="position">Julio, 2022</span>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
-                    class="bi bi-person-check" class="text text-center" viewBox="0 0 16 16">
-                    <path
-                      d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                    <path fill-rule="evenodd"
-                      d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                  </svg>
-                </div>
-                <div class="text text-center">
-                  <p class="mb-5">"Una bendición este lugar, realmente son excelentes los doctores, el trato al paciente
-                    es maravilloso, y todo por un precio muy bajo a comparación de otras partes".</p>
-                  <p class="name">Oscar Perez</p>
-                  <span class="position">Septiembre, 2021</span>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
-                    class="bi bi-person-check" class="text text-center" viewBox="0 0 16 16">
-                    <path
-                      d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                    <path fill-rule="evenodd"
-                      d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                  </svg>
-                </div>
-                <div class="text text-center">
-                  <p class="mb-5">"La clínica es bastante moderna y limpia. Cuentan con varios especialistas y lo que
-                    mas me gusta es que todo el personal es bastante amable y tratan bien a los pacientes".</p>
-                  <p class="name">Jocelyn Galdámez</p>
-                  <span class="position">Enero, 2019</span>
-                </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
-                    class="bi bi-person-check" class="text text-center" viewBox="0 0 16 16">
-                    <path
-                      d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                    <path fill-rule="evenodd"
-                      d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
-                  </svg>
-                </div>
-                <div class="text text-center">
-                  <p class="mb-5">"Es una clínica muy completa, hay varios especialistas, laboratorio y odontología. Si
-                    no tienes cita se recomienda llegar muy temprano, las personas comienzan hacer cola tipo 5 am, sino
-                    deben esperar. Tienen muy buenos profesionales".</p>
-                  <p class="name">Johanna Morales</p>
-                  <span class="position">Abril, 2022</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="ftco-gallery">
-    <div class="container-wrap">
-      <div class="row no-gutters">
-        <div class="col-md-3 ftco-animate">
-          <a href="#" class="gallery img d-flex align-items-center"
-            style="background-image: url(images/Consulta_Medica.jpg);">
-            <div class="icon mb-4 d-flex align-items-center justify-content-center">
-              <span class="icon-search"></span>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-3 ftco-animate">
-          <a href="#" class="gallery img d-flex align-items-center"
-            style="background-image: url(images/consulta_med.jpg);">
-            <div class="icon mb-4 d-flex align-items-center justify-content-center">
-              <span class="icon-search"></span>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-3 ftco-animate">
-          <a href="#" class="gallery img d-flex align-items-center"
-            style="background-image: url(images/gastroenterologia-img.jpg);">
-            <div class="icon mb-4 d-flex align-items-center justify-content-center">
-              <span class="icon-search"></span>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-3 ftco-animate">
-          <a href="#" class="gallery img d-flex align-items-center"
-            style="background-image: url(images/revision-ginecologica.jpg);">
-            <div class="icon mb-4 d-flex align-items-center justify-content-center">
-              <span class="icon-search"></span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="ftco-section">
-    <div class="container">
-      <div class="row justify-content-center mb-5 pb-3">
-        <div class="col-md-7 text-center heading-section ftco-animate">
-          <h2 class="mb-2">Encuentranos</h2>
-          <p>Estamos ubicados en Colonia Rabida, Santa Ana, El Salvador</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
-  <div id="map"></div>
 
   <footer class="ftco-footer ftco-bg-dark ftco-section">
     <div id="contactanos" class="container">
@@ -657,14 +487,6 @@
       </div>
       <div class="row">
         <div class="col-md-12 text-center">
-
-          <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;
-            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
-            <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          </p>
         </div>
       </div>
     </div>
@@ -685,55 +507,14 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalRequestLabel">Haz una cita</h5>
+          <h5 class="modal-title" id="modalRequestLabel"><label for="" class="sub-text" style="font-weight: 280;">Para agendar una cita primero debe de </label>
+           <a href="login.php" class="hover-link1 non-style-link">Iniciar Sesión</a><a &nbsp> o </a><a href="signup.php" class="hover-link1 non-style-link">Crear una Cuenta</a></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
           <form action="#">
-            <div class="select-wrap">
-              <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-              <select name="" id="" class="form-control">
-                <option value="">Departamento</option>
-                <option value="">Emergencias</option>
-                <option value="">Diagnosticos</option>
-                <option value="">Consultas</option>
-                <option value="">Controles</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
-              <input type="text" class="form-control" id="appointment_name" placeholder="Nombre Completo">
-            </div>
-            <div class="form-group">
-              <!-- <label for="appointment_email" class="text-black">Email</label> -->
-              <input type="text" class="form-control" id="appointment_email" placeholder="Email">
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <!-- <label for="appointment_date" class="text-black">Date</label> -->
-                  <input type="text" class="form-control appointment_date" placeholder="Fecha">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <!-- <label for="appointment_time" class="text-black">Time</label> -->
-                  <input type="text" class="form-control appointment_time" placeholder="Hora">
-                </div>
-              </div>
-            </div>
-
-
-            <div class="form-group">
-              <!-- <label for="appointment_message" class="text-black">Message</label> -->
-              <textarea name="" id="appointment_message" class="form-control" cols="30" rows="10"
-                placeholder="Detalle"></textarea>
-            </div>
-            <div class="form-group">
-              <input type="submit" value="Guardar Cita" class="btn btn-primary">
-            </div>
           </form>
         </div>
 
@@ -756,9 +537,6 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
 
 </body>

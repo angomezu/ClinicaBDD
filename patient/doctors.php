@@ -76,13 +76,13 @@
                 </tr>
                 <tr class="menu-row">
                     <td class="menu-btn menu-icon-doctor menu-active menu-icon-doctor-active">
-                        <a href="doctors.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">All Doctors</p></a></div>
+                        <a href="doctors.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Doctores</p></a></div>
                     </td>
                 </tr>
                 
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-session">
-                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Sesiones Disponibles</p></div></a>
+                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Agendar una Cita</p></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row" >
@@ -409,7 +409,7 @@
                         <h2>¿Esta seguro que quiere redirigirse?</h2>
                         <a class="close" href="doctors.php">&times;</a>
                         <div class="content">
-                            Esta a punto de ver todas las sesiones disponibles de: <br><br>'.substr($name,0,40).'.
+                            Esta a punto de ver todas las citas disponibles de: <br><br>'.substr($name,0,40).'.
                             
                         </div>
                         <form action="schedule.php" method="post" style="display: flex">

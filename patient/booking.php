@@ -93,7 +93,7 @@
                 
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-session menu-active menu-icon-session-active">
-                        <a href="schedule.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Sesiones Disponibles</p></div></a>
+                        <a href="schedule.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Agendar una Cita</p></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row" >
@@ -237,7 +237,7 @@
                                             
                                                 <div style="width:100%">
                                                         <div class="h1-search" style="font-size:25px;">
-                                                            Detalles de la Sesión
+                                                            Detalles de la Cita
                                                         </div><br><br>
                                                         <div class="h3-search" style="font-size:18px;line-height:30px">
                                                             Nombre del Doctor:  &nbsp;&nbsp;<b>'.$docname.'</b><br><br>
@@ -247,9 +247,9 @@
                                                           
                                                         </div><br>
                                                         <div class="h3-search" style="font-size:18px;">
-                                                            Nombre de la Sesión: '.$title.'<br><br>
-                                                            Fecha Agendada de la Sesión: '.$scheduledate.'<br><br>
-                                                            Hora de la Cita: <input type="time" name="time" class="input-text" placeholder="Hora" required><br>
+                                                            Nombre del Departamento:<b> '.$title.'</b><br><br>
+                                                            Fecha de la Cita: <b>'.$scheduledate.'</b><br><br>
+                                                            Hora deseada de la Cita <b>(Nota: Escoger una hora no garantiza la disponibilidad de la misma. Al escoger su hora deseada, se le mostrará si la misma esta disponible o no.)</b>: <input type="time" name="time" class="input-text" placeholder="Hora" required><br>
                                                             Precio por Consulta: <b>$15.00 USD</b>
 
                                                         </div>

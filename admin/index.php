@@ -80,7 +80,7 @@
                 </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-schedule">
-                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Sesiones</p></div></a>
+                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Turnos</p></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row">
@@ -211,7 +211,7 @@
                                                     <?php    echo $schedulerow ->num_rows  ?>
                                                 </div><br>
                                                 <div class="h3-dashboard" style="font-size: 15px">
-                                                    Sesiones de este día
+                                                    Turnos de este día
                                                 </div>
                                         </div>
                                                 <div class="btn-icon-back dashboard-icons" style="background-image: url('../img/icons/session-iceblue.svg');"></div>
@@ -247,10 +247,10 @@
                                 </td>
                                 <td>
                                     <p style="text-align:right;padding:10px;padding-right:48px;padding-bottom:0;font-size:23px;font-weight:700;color:var(--primarycolor);">
-                                        PRÓXIMAS SESIONES
+                                        PRÓXIMOS TURNOS
                                     </p>
                                     <p style="padding-bottom:19px;text-align:right;padding-right:50px;font-size:15px;font-weight:500;color:#212529e3;line-height: 20px;">
-                                        Sesiones programadas dentro de los siguientes 7 días<br>
+                                        Turnos programadas dentro de los siguientes 7 días<br>
                                     </p>
                                 </td>
                             </tr>
@@ -278,7 +278,7 @@
                                                 <th class="table-headin">
                                                     
                                                 
-                                                    Sesión
+                                                    Turno
                                                     
                                                 </th>
                                             </tr>
@@ -364,7 +364,7 @@
                                                 <th class="table-headin">
                                                     
                                                 
-                                                Nombre de la Sesión
+                                                Nombre del Turno
                                                 
                                                 </th>
                                                 
@@ -395,7 +395,7 @@
                                                     
                                                     <br>
                                                     <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">We  couldnt find anything related to your keywords !</p>
-                                                    <a class="non-style-link" href="schedule.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Mostrar todas las Sesiones &nbsp;</font></button>
+                                                    <a class="non-style-link" href="schedule.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Mostrar todos las Turnos &nbsp;</font></button>
                                                     </a>
                                                     </center>
                                                     <br><br><br><br>
@@ -447,7 +447,7 @@
                                 </td>
                                 <td>
                                     <center>
-                                        <a href="schedule.php" class="non-style-link"><button class="btn-primary btn" style="width:85%">Mostrar todas las sesiones</button></a>
+                                        <a href="schedule.php" class="non-style-link"><button class="btn-primary btn" style="width:85%">Mostrar todos los Turnos</button></a>
                                     </center>
                                 </td>
                             </tr>

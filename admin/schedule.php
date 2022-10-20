@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/main.css">  
     <link rel="stylesheet" href="../css/admin.css">
         
-    <title>Sesiones</title>
+    <title>Turnos</title>
     <style>
         .popup{
             animation: transitionIn-Y-bottom 0.5s;
@@ -77,7 +77,7 @@
                 </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-schedule menu-active menu-icon-schedule-active">
-                        <a href="schedule.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Sesiones</p></div></a>
+                        <a href="schedule.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Turnos</p></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row">
@@ -100,7 +100,7 @@
                     <a href="schedule.php" ><button  class="login-btn btn-primary-soft btn btn-icon-back"  style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px"><font class="tn-in-text">Atrás</font></button></a>
                     </td>
                     <td>
-                        <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Administrador de Sesiones</p>
+                        <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Administrador de Turnos</p>
                                            
                     </td>
                     <td width="15%">
@@ -130,8 +130,8 @@
                 <tr>
                     <td colspan="4" >
                         <div style="display: flex;margin-top: 40px;">
-                        <div class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49);margin-top: 5px;">Agendar Sesión</div>
-                        <a href="?action=add-session&id=none&error=0" class="non-style-link"><button  class="login-btn btn-primary btn button-icon"  style="margin-left:25px;background-image: url('../img/icons/add.svg');">Añadir Sesión</font></button>
+                        <div class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49);margin-top: 5px;">Agendar Turno</div>
+                        <a href="?action=add-session&id=none&error=0" class="non-style-link"><button  class="login-btn btn-primary btn button-icon"  style="margin-left:25px;background-image: url('../img/icons/add.svg');">Añadir Turno</font></button>
                         </a>
                         </div>
                     </td>
@@ -139,7 +139,7 @@
                 <tr>
                     <td colspan="4" style="padding-top:10px;width: 100%;" >
                     
-                        <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">Total de sesiones: <?php echo $list110->num_rows; ?></p>
+                        <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">Total de Turnos: <?php echo $list110->num_rows; ?></p>
                     </td>
                     
                 </tr>
@@ -213,7 +213,7 @@
                         }
                         //echo $sqlpt2;
                         //echo $sqlpt1;
-                        $sqlmain= "select schedule.scheduleid,schedule.title,doctor.docname,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join doctor on schedule.docid=doctor.docid ";
+                        $sqlmain= "select schedule.scheduleid,schedule.title,doctor.docname,schedule.scheduledate,schedule.scheduletime,schedule.scheduleendtime,schedule.nop from schedule inner join doctor on schedule.docid=doctor.docid ";
                         $sqllist=array($sqlpt1,$sqlpt2);
                         $sqlkeywords=array(" where "," and ");
                         $key2=0;
@@ -230,7 +230,7 @@
                         
                         //
                     }else{
-                        $sqlmain= "select schedule.scheduleid,schedule.title,doctor.docname,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join doctor on schedule.docid=doctor.docid  order by schedule.scheduledate desc";
+                        $sqlmain= "select schedule.scheduleid,schedule.title,doctor.docname,schedule.scheduledate,schedule.scheduletime,schedule.scheduleendtime,schedule.nop from schedule inner join doctor on schedule.docid=doctor.docid  order by schedule.scheduledate desc";
 
                     }
 
@@ -248,7 +248,7 @@
                                 <th class="table-headin">
                                     
                                 
-                                Nombre de la Sesión
+                                Nombre del Turno
                                 
                                 </th>
                                 
@@ -258,6 +258,11 @@
                                 <th class="table-headin">
                                     
                                     Fecha y Hora de Inicio
+                                    
+                                </th>
+                                <th class="table-headin">
+                                    
+                                    Fecha y Hora Fin
                                     
                                 </th>
                                 <th class="table-headin">
@@ -287,8 +292,8 @@
                                     <img src="../img/notfound.svg" width="25%">
                                     
                                     <br>
-                                    <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Aún no posee Sesiones programadas</p>
-                                    <a class="non-style-link" href="schedule.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Mostrar todas las Sesiones &nbsp;</font></button>
+                                    <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Aún no posee Turnos programados</p>
+                                    <a class="non-style-link" href="schedule.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Mostrar todas los Turnos &nbsp;</font></button>
                                     </a>
                                     </center>
                                     <br><br><br><br>
@@ -304,6 +309,7 @@
                                     $docname=$row["docname"];
                                     $scheduledate=$row["scheduledate"];
                                     $scheduletime=$row["scheduletime"];
+                                    $scheduleendtime=$row["scheduleendtime"];
                                     $nop=$row["nop"];
                                     echo '<tr>
                                         <td> &nbsp;'.
@@ -314,6 +320,9 @@
                                         </td>
                                         <td style="text-align:center;">
                                             '.substr($scheduledate,0,10).' '.substr($scheduletime,0,5).'
+                                        </td>
+                                        <td style="text-align:center;">
+                                            '.substr($scheduledate,0,10).' '.substr($scheduleendtime,0,5).'
                                         </td>
                                         <td style="text-align:center;">
                                             '.$nop.'
@@ -373,18 +382,18 @@
 
                             <tr>
                                 <td>
-                                    <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Añadir nueva Sesión</p><br>
+                                    <p style="padding: 0;margin: 0;text-align: left;font-size: 25px;font-weight: 500;">Añadir nuevo Turno</p><br>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
                                 <form action="add-session.php" method="POST" class="add-new-form">
-                                    <label for="title" class="form-label">Nombre de Sesión : </label>
+                                    <label for="title" class="form-label">Nombre del Turno : </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <input type="text" name="title" class="input-text" placeholder="Nombre de esta Sesión" required><br>
+                                    <input type="text" name="title" class="input-text" placeholder="Nombre de este Turno" required><br>
                                 </td>
                             </tr>
                             <tr>
@@ -426,7 +435,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="date" class="form-label">Fecha de Sesión: </label>
+                                    <label for="date" class="form-label">Fecha del Turno: </label>
                                 </td>
                             </tr>
                             <tr>
@@ -436,7 +445,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="time" class="form-label">Hora: </label>
+                                    <label for="time" class="form-label">Hora que Inicia el Turno: </label>
                                 </td>
                             </tr>
                             <tr>
@@ -444,12 +453,22 @@
                                     <input type="time" name="time" class="input-text" placeholder="Hora" required><br>
                                 </td>
                             </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                    <label for="time" class="form-label">Hora que Finaliza el Turno: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                    <input type="time" name="endtime" class="input-text" placeholder="Hora" required><br>
+                                </td>
+                            </tr>
                            
                             <tr>
                                 <td colspan="2">
                                     <input type="reset" value="Limpiar Datos" class="login-btn btn-primary-soft btn" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 
-                                    <input type="submit" value="Añadir Sesión" class="login-btn btn-primary btn" name="shedulesubmit">
+                                    <input type="submit" value="Añadir Turno" class="login-btn btn-primary btn" name="shedulesubmit">
                                 </td>
                 
                             </tr>
@@ -471,7 +490,7 @@
                     <div class="popup">
                     <center>
                     <br><br>
-                        <h2>Sesión Añadida.</h2>
+                        <h2>Turno Añadido.</h2>
                         <a class="close" href="schedule.php">&times;</a>
                         <div class="content">
                         '.substr($titleget,0,40).' ha sido añadida.<br><br>
@@ -495,7 +514,7 @@
                         <h2>¡ALERTA!</h2>
                         <a class="close" href="schedule.php">&times;</a>
                         <div class="content">
-                            ¿Seguro que quieres eliminar la sesión? <br><br>'.substr($nameget,0,40).'.<br><br>
+                            ¿Seguro que quieres eliminar el Turno? <br><br>'.substr($nameget,0,40).'.<br><br>
                             
                         </div>
                         <div style="display: flex;justify-content: center;">
@@ -508,7 +527,7 @@
             </div>
             '; 
         }elseif($action=='view'){
-            $sqlmain= "select schedule.scheduleid,schedule.title,doctor.docname,schedule.scheduledate,schedule.scheduletime,schedule.nop from schedule inner join doctor on schedule.docid=doctor.docid  where  schedule.scheduleid=$id";
+            $sqlmain= "select schedule.scheduleid,schedule.title,doctor.docname,schedule.scheduledate,schedule.scheduletime,schedule.scheduleendtime,schedule.nop from schedule inner join doctor on schedule.docid=doctor.docid  where  schedule.scheduleid=$id";
             $result= $database->query($sqlmain);
             $row=$result->fetch_assoc();
             $docname=$row["docname"];
@@ -516,6 +535,7 @@
             $title=$row["title"];
             $scheduledate=$row["scheduledate"];
             $scheduletime=$row["scheduletime"];
+            $scheduleendtime=$row["scheduleendtime"];
             
            
             $nop=$row['nop'];
@@ -545,7 +565,7 @@
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Nombre de la Sesión: </label>
+                                    <label for="name" class="form-label">Nombre del Turno: </label>
                                 </td>
                             </tr>
                             <tr>
@@ -556,7 +576,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="Email" class="form-label">Doctor de esta Sesión: </label>
+                                    <label for="Email" class="form-label">Doctor de este Turno: </label>
                                 </td>
                             </tr>
                             <tr>
@@ -586,7 +606,17 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="spec" class="form-label"><b>Pacientes que ya se han agendado en este sesión:</b> ('.$result12->num_rows."/".$nop.')</label>
+                                    <label for="Tele" class="form-label">Hora de Finalización: </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                '.$scheduleendtime.'<br><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                    <label for="spec" class="form-label"><b>Pacientes que ya se han agendado en este Turno:</b> ('.$result12->num_rows."/".$nop.')</label>
                                     <br><br>
                                 </td>
                             </tr>
@@ -632,7 +662,7 @@
                                              <img src="../img/notfound.svg" width="25%">
                                              
                                              <br>
-                                             <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Aún no hay pacientes agendados en esta sesión.</p>
+                                             <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Aún no hay pacientes agendados en este Turno.</p>
                                              <a class="non-style-link" href="appointment.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Mostrar todas las Citas &nbsp;</font></button>
                                              </a>
                                              </center>

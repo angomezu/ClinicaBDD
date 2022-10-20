@@ -20,7 +20,8 @@
         $nop=$_POST["nop"];
         $date=$_POST["date"];
         $time=$_POST["time"];
-        $sql="insert into schedule (docid,title,scheduledate,scheduletime,nop) values ($docid,'$title','$date','$time',$nop);";
+        $endtime=$_POST["endtime"];
+        $sql="insert into schedule (docid,title,scheduledate,scheduletime,scheduleendtime,nop) values ($docid,'$title','$date','$time','$endtime',$nop);";
         $result= $database->query($sql);
         header("location: schedule.php?action=session-added&title=$title");
         

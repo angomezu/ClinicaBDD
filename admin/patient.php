@@ -76,7 +76,7 @@
                 </tr>
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-schedule">
-                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Sesiones</p></div></a>
+                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Turnos</p></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row">
