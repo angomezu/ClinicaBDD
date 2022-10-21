@@ -84,7 +84,7 @@
                 
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-session">
-                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Mis Sesiones</p></div></a>
+                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Mis Turnos</p></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row" >
@@ -712,28 +712,28 @@
                                              $prescription=$row["prescription"];
                                              $prescription_date=$row["prescription_date"];
                                              
-                                             echo '<tr style="text-align:center;">
+                                             echo '<tr style="text-align:center;table-layout: fixed">
                                                 <td>
                                                 '.substr($precordid,0,15).'
                                                 </td>
 
-                                                 <td style="font-weight:600;padding:25px">
+                                                 <td style="font-weight:600;padding:25px;width: 70%">
                                                  '.substr($symptoms,0,25).'
                                                  </td >
 
-                                                 <td style="font-weight:600;padding:25px">
+                                                 <td style="font-weight:600;padding:25px;width: 70%">
                                                  '.substr($diagnosis,0,25).'
                                                  </td >
 
-                                                 <td style="font-weight:600;padding:25px">
+                                                 <td style="font-weight:600;padding:25px;width: 70%">
                                                  '.substr($prescription,0,25).'
                                                  </td >
 
-                                                 <td style="font-weight:600;padding:25px">
+                                                 <td style="font-weight:600;padding:25px;width: 70%">
                                                  '.substr($docname,0,25).'
                                                  </td >
 
-                                                 <td style="font-weight:600;padding:25px">
+                                                 <td style="font-weight:600;width: 70%">
                                                  '.substr($prescription_date,0,25).'
                                                  </td >
                                                  

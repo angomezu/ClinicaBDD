@@ -92,7 +92,7 @@
                 
                 <tr class="menu-row" >
                     <td class="menu-btn menu-icon-session">
-                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Mis Sesiones</p></div></a>
+                        <a href="schedule.php" class="non-style-link-menu"><div><p class="menu-text">Mis Turnos</p></div></a>
                     </td>
                 </tr>
                 <tr class="menu-row" >
@@ -157,7 +157,7 @@
                             <h3>¡Bienvenido!</h3>
                             <h1><?php echo $username  ?>.</h1>
                             <p>Este es su perfil personal.<br>
-                            En el podra ver sus horarios, conectar con las citas de sus pacientes, agendar sesiones y mucho más.<br><br>
+                            En el podra ver sus horarios, conectar con las citas de sus pacientes, ver sus turnos y mucho más.<br><br>
                             </p>
                             <a href="appointment.php" class="non-style-link"><button class="btn-primary btn" style="width:15%">Ver mis Citas</button></a>
                             <br>
@@ -238,7 +238,7 @@
                                                                     <?php    echo $schedulerow ->num_rows  ?>
                                                                 </div><br>
                                                                 <div class="h3-dashboard">
-                                                                    Sesiones este día &nbsp;
+                                                                    Turnos este día &nbsp;
                                                                 </div>
                                                         </div>
                                                                 <div class="btn-icon-back dashboard-icons" style="background-image: url('../img/icons/session-iceblue.svg');"></div>
@@ -261,7 +261,7 @@
 
 
                             
-                                    <p id="anim" style="font-size: 20px;font-weight:600;padding-left: 40px;">Sus Sesiones Esta Semana</p>
+                                    <p id="anim" style="font-size: 20px;font-weight:600;padding-left: 40px;">Sus Turnos esta Semana</p>
                                     <center>
                                         <div class="abc scroll" style="height: 250px;padding: 0;margin: 0;">
                                         <table width="85%" class="sub-table scrolldown" border="0" >
@@ -271,7 +271,7 @@
                                                 <th class="table-headin">
                                                     
                                                 
-                                                Nombre de la Sesión
+                                                Nombre del Turno
                                                 
                                                 </th>
                                                 
@@ -301,8 +301,8 @@
                                                     <img src="../img/notfound.svg" width="25%">
                                                     
                                                     <br>
-                                                    <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Aún no posee Sesiones programadas</p>
-                                                    <a class="non-style-link" href="schedule.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Mostrar todas las Sesiones &nbsp;</font></button>
+                                                    <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Aún no posee Turnos programadas</p>
+                                                    <a class="non-style-link" href="schedule.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Mostrar todos los Turnos &nbsp;</font></button>
                                                     </a>
                                                     </center>
                                                     <br><br><br><br>

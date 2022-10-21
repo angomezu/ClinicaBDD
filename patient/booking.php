@@ -114,7 +114,7 @@
             <table border="0" width="100%" style=" border-spacing: 0;margin:0;padding:0;margin-top:25px; ">
                 <tr >
                     <td width="13%" >
-                    <a href="schedule.php" ><button  class="login-btn btn-primary-soft btn btn-icon-back"  style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px"><font class="tn-in-text">Atrás</font></button></a>
+                    <a href="schedule.php" ><button  class="login-btn btn-primary-soft btn btn-icon-back"  style="padding-top:11px;padding-bottom:11px;margin-left:11px;width:125px"><font class="tn-in-text">Atrás</font></button></a>
                     </td>
                     <td >
                             <form action="schedule.php" method="post" class="header-search">
@@ -215,6 +215,7 @@
                                     $docemail=$row["docemail"];
                                     $scheduledate=$row["scheduledate"];
                                     $scheduletime=$row["scheduletime"];
+                                    $nop=$row["nop"];
                                     $sql2="select * from appointment where scheduleid=$id";
                                     //echo $sql2;
                                      $result12= $database->query($sql2);
@@ -232,7 +233,7 @@
                                      
 
                                     echo '
-                                    <td style="width: 50%;" rowspan="2">
+                                    <td style="width: 50%;" rowspan="1">
                                             <div  class="dashboard-items search-items"  >
                                             
                                                 <div style="width:100%">
@@ -249,8 +250,9 @@
                                                         <div class="h3-search" style="font-size:18px;">
                                                             Nombre del Departamento:<b> '.$title.'</b><br><br>
                                                             Fecha de la Cita: <b>'.$scheduledate.'</b><br><br>
-                                                            Hora deseada de la Cita <b>(Nota: Escoger una hora no garantiza la disponibilidad de la misma. Al escoger su hora deseada, se le mostrará si la misma esta disponible o no.)</b>: <input type="time" name="time" class="input-text" placeholder="Hora" required><br>
-                                                            Precio por Consulta: <b>$15.00 USD</b>
+                                                            Cantidad de Cupos de este Turno: <b>'.$nop.'</b> <br><b style="font-size:15px;line-height:20px;color:red"> Nota: si su Número de Cita excede la cantidad de cupos de este turno por favor contactar a Servicio al Cliente (503) 2234-4444 para consultar disponibilidad. </b></br><br>
+                                                            Hora deseada de la Cita: <input type="time" name="time" class="input-text" required><b style="font-size:15px;line-height:20px;color:red"> Nota: escoger una hora no garantiza la disponibilidad de la misma. Al escoger su hora deseada, se le mostrará si la misma está disponible o no. </b></br></br>
+                                                            Precio por Consulta: <b>$15.00 USD (se cancela al finalizar su consulta).</b>
 
                                                         </div>
                                                         <br>

@@ -264,17 +264,22 @@
             $sqlmain= "select * from patient where pid='$id'";
             $result= $database->query($sqlmain);
             $row=$result->fetch_assoc();
+            $result= $database->query($sqlmain);
+            $row=$result->fetch_assoc();
             $name=$row["pname"];
             $email=$row["pemail"];
-            $address=$row["paddress"];
-            
-           
+            $nic=$row["pnic"];
             $dob=$row["pdob"];
-            $nic=$row['pnic'];
-            $tele=$row['ptel'];
+            $tele=$row["ptel"];
+            $address=$row["paddress"];
+
+
+            $sqlmain12= "select * from precords inner join patient on patient.pid=precords.pid inner join doctor on doctor.docid=precords.docid where patient.pid=$id;";
+            #$sqlmain12= "select precords.precordid,precords.symptoms,doctor.docname,precords.diagnosis,precords.prescription,precords.prescription_date from precords inner join doctor on precords.docid=doctor.docid  where  precords.precordid=$id";
+            $result12= $database->query($sqlmain12);
             echo '
             <div id="popup1" class="overlay">
-                    <div class="popup">
+                    <div class="popup" style="width: 70%;">
                     <center>
                         <h2></h2>
                         <a class="close" href="settings.php">&times;</a>
@@ -282,7 +287,7 @@
                             Clinica La Bendición de Dios<br>
                             
                         </div>
-                        <div style="display: flex;justify-content: center;">
+                        <div class="abc scroll" style="display: flex;justify-content: center;">
                         <table width="80%" class="sub-table scrolldown add-doc-form-container" border="0">
                         
                             <tr>
@@ -364,6 +369,101 @@
                 
                             </tr>
                            
+                            <tr>
+                                <td class="label-td" colspan="2">
+                                    <label for="spec" class="form-label"><b>Historial del Paciente:</b></label>
+                                    <br><br>
+                                </td>
+                            </tr>
+
+                            
+                            <tr>
+                            <td colspan="4">
+                                <center>
+                                 <div class="abc scroll">
+                                 <table width="100%" class="sub-table scrolldown" border="0">
+                                 <thead>
+                                 <tr>   
+                                        <th class="table-headin">
+                                             ID de Consulta
+                                         </th>
+                                         <th class="table-headin">
+                                             Síntomas
+                                         </th>
+                                         <th class="table-headin">  
+                                             Diagnóstico 
+                                         </th>
+                                         <th class="table-headin">  
+                                             Receta
+                                         </th>
+                                         <th class="table-headin">  
+                                             Doctor
+                                         </th>
+                                         <th class="table-headin">
+                                             Fecha de Diagnóstico
+                                         </th>
+                                         
+                                 </thead>
+                                 <tbody>';
+                                 $result= $database->query($sqlmain12);
+                
+                                         if($result->num_rows==0){
+                                             echo '<tr>
+                                             <td colspan="7">
+                                             <br><br><br><br>
+                                             <center>
+                                             <img src="../img/notfound.svg" width="25%">
+                                             
+                                             <br>
+                                             <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Este paciente aún no cuenta con diagnósticos.</p>
+                                             </a>
+                                             </center>
+                                             <br><br><br><br>
+                                             </td>
+                                             </tr>';
+                                             
+                                         }
+                                         else{
+                                         for ( $x=0; $x<$result->num_rows;$x++){
+                                             $row=$result->fetch_assoc();
+                                             $docname=$row["docname"];
+                                             $precordid=$row["precordid"];
+                                             $symptoms=$row["symptoms"];
+                                             $diagnosis=$row["diagnosis"];
+                                             $prescription=$row["prescription"];
+                                             $prescription_date=$row["prescription_date"];
+                                             
+                                             echo '<tr style="text-align:center;">
+                                                <td>
+                                                '.substr($precordid,0,15).'
+                                                </td>
+
+                                                 <td style="font-weight:600;padding:25px">
+                                                 '.substr($symptoms,0,25).'
+                                                 </td >
+
+                                                 <td style="font-weight:600;padding:25px">
+                                                 '.substr($diagnosis,0,25).'
+                                                 </td >
+
+                                                 <td style="font-weight:600;padding:25px">
+                                                 '.substr($prescription,0,25).'
+                                                 </td >
+
+                                                 <td style="font-weight:600;padding:25px">
+                                                 '.substr($docname,0,25).'
+                                                 </td >
+
+                                                 <td style="font-weight:600;padding:25px">
+                                                 '.substr($prescription_date,0,25).'
+                                                 </td >
+                                                 
+                                             </tr>';
+                                             
+                                         }
+                                     }
+                                     
+                                    echo '</tbody>
 
                         </table>
                         </div>

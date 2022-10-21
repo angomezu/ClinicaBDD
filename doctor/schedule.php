@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/main.css">  
     <link rel="stylesheet" href="../css/admin.css">
         
-    <title>Sesiones</title>
+    <title>Turnos</title>
     <style>
         .popup{
             animation: transitionIn-Y-bottom 0.5s;
@@ -81,7 +81,7 @@
              
              <tr class="menu-row" >
                  <td class="menu-btn menu-icon-session menu-active menu-icon-session-active">
-                     <a href="schedule.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Mis Sesiones</p></div></a>
+                     <a href="schedule.php" class="non-style-link-menu non-style-link-menu-active"><div><p class="menu-text">Mis Turnos</p></div></a>
                  </td>
              </tr>
              <tr class="menu-row" >
@@ -104,7 +104,7 @@
                     <a href="schedule.php" ><button  class="login-btn btn-primary-soft btn btn-icon-back"  style="padding-top:11px;padding-bottom:11px;margin-left:20px;width:125px"><font class="tn-in-text">Atrás</font></button></a>
                     </td>
                     <td>
-                        <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Mis Sesiones</p>
+                        <p style="font-size: 23px;padding-left:12px;font-weight: 600;">Mis Turnos</p>
                                            
                     </td>
                     <td width="15%">
@@ -135,7 +135,7 @@
                 <tr>
                     <td colspan="4" style="padding-top:10px;width: 100%;" >
                     
-                        <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">Mis Sesiones (<?php echo $list110->num_rows; ?>) </p>
+                        <p class="heading-main12" style="margin-left: 45px;font-size:18px;color:rgb(49, 49, 49)">Mis Turnos (<?php echo $list110->num_rows; ?>) </p>
                     </td>
                     
                 </tr>
@@ -196,7 +196,7 @@
                                 <th class="table-headin">
                                     
                                 
-                                Nombre de la Sesión
+                                Nombre del Turno
                                 
                                 </th>
                                 
@@ -217,6 +217,7 @@
                                     Acciones
                                     
                                 </tr>
+
                         </thead>
                         <tbody>
                         
@@ -233,8 +234,8 @@
                                     <img src="../img/notfound.svg" width="25%">
                                     
                                     <br>
-                                    <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Aún no posee Sesiones programadas</p>
-                                    <a class="non-style-link" href="schedule.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Mostrar todas las Sesiones &nbsp;</font></button>
+                                    <p class="heading-main12" style="margin-left: 45px;font-size:20px;color:rgb(49, 49, 49)">Aún no posee Turnos programados</p>
+                                    <a class="non-style-link" href="schedule.php"><button  class="login-btn btn-primary-soft btn"  style="display: flex;justify-content: center;align-items: center;margin-left:20px;">&nbsp; Mostrar todos los Turnos &nbsp;</font></button>
                                     </a>
                                     </center>
                                     <br><br><br><br>
@@ -268,7 +269,7 @@
                                         
                                         <a href="?action=view&id='.$scheduleid.'" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-view"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Ver</font></button></a>
                                        &nbsp;&nbsp;&nbsp;
-                                       <a href="?action=drop&id='.$scheduleid.'&name='.$title.'" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-delete"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Cancelar Sesión</font></button></a>
+                                       <a href="?action=drop&id='.$scheduleid.'&name='.$title.'" class="non-style-link"><button  class="btn-primary-soft btn button-icon btn-delete"  style="padding-left: 40px;padding-top: 12px;padding-bottom: 12px;margin-top: 10px;"><font class="tn-in-text">Cancelar Turno</font></button></a>
                                         </div>
                                         </td>
                                     </tr>';
@@ -305,7 +306,7 @@
                         <h2>¡ALERTA!</h2>
                         <a class="close" href="schedule.php">&times;</a>
                         <div class="content">
-                        ¿Seguro que quieres eliminar la sesión?<br>('.substr($nameget,0,40).').
+                        ¿Seguro que quieres eliminar el turno?<br>('.substr($nameget,0,40).').
                             
                         </div>
                         <div style="display: flex;justify-content: center;">
@@ -355,7 +356,7 @@
                             <tr>
                                 
                                 <td class="label-td" colspan="2">
-                                    <label for="name" class="form-label">Nombre de la Sesión: </label>
+                                    <label for="name" class="form-label">Nombre del Turno: </label>
                                 </td>
                             </tr>
                             <tr>
@@ -366,7 +367,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="Email" class="form-label">Doctor asignado a este Sesión: </label>
+                                    <label for="Email" class="form-label">Doctor asignado a este Turno: </label>
                                 </td>
                             </tr>
                             <tr>
@@ -396,7 +397,7 @@
                             </tr>
                             <tr>
                                 <td class="label-td" colspan="2">
-                                    <label for="spec" class="form-label"><b>Pacientes registrados en esta Sesión:</b> ('.$result12->num_rows."/".$nop.')</label>
+                                    <label for="spec" class="form-label"><b>Pacientes registrados en este Turno:</b> ('.$result12->num_rows."/".$nop.')</label>
                                     <br><br>
                                 </td>
                             </tr>
@@ -420,10 +421,12 @@
                                              Número de Cita
                                              
                                          </th>
-                                        
-                                         
+
                                          <th class="table-headin">
                                              Teléfono de Paciente
+                                         </th>
+                                         <th class="table-headin">
+                                             Hora de la Cita
                                          </th>
                                          
                                  </thead>
@@ -458,6 +461,7 @@
                                              $pid=$row["pid"];
                                              $pname=$row["pname"];
                                              $ptel=$row["ptel"];
+                                             $appotime=$row["appotime"];
                                              
                                              echo '<tr style="text-align:center;">
                                                 <td>
@@ -473,6 +477,9 @@
                                                  </td>
                                                  <td>
                                                  '.substr($ptel,0,25).'
+                                                 </td>
+                                                 <td>
+                                                 '.substr($appotime,0,25).'
                                                  </td>
                                                  
                                                  
