@@ -235,7 +235,7 @@
                                 
                                 <th class="table-headin">
                                     
-                                    Fecha de la Cita
+                                    Fecha Creada
                                     
                                 </th>
 

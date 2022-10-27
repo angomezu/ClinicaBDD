@@ -251,12 +251,21 @@
                                                             Nombre del Departamento:<b> '.$title.'</b><br><br>
                                                             Fecha de la Cita: <b>'.$scheduledate.'</b><br><br>
                                                             Cantidad de Cupos de este Turno: <b>'.$nop.'</b> <br><b style="font-size:15px;line-height:20px;color:red"> Nota: si su Número de Cita excede la cantidad de cupos de este turno por favor contactar a Servicio al Cliente (503) 2234-4444 para consultar disponibilidad. </b></br><br>
-                                                            Hora deseada de la Cita: <input type="time" name="time" class="input-text" required><b style="font-size:15px;line-height:20px;color:red"> Nota: escoger una hora no garantiza la disponibilidad de la misma. Al escoger su hora deseada, se le mostrará si la misma está disponible o no. </b></br></br>
+                                                            Hora deseada de la Cita: <select name="time" class="input-text" required="required">
+                                                            <option value="08:00:00">08:00 AM</option>
+                                                            <option value="08:00:00">09:00 AM</option>
+                                                            <option value="10:00:00">10:00 AM</option>
+                                                            <option value="10:00:00">11:00 AM</option>
+                                                            <option value="12:00:00">12:00 PM</option>
+                                                            <option value="14:00:00">02:00 PM</option>
+                                                            <option value="14:00:00">03:00 PM</option>
+                                                            <option value="16:00:00">04:00 PM</option>
+                                                            <option value="16:00:00">05:00 PM</option>
+                                                          </select> <b style="font-size:15px;line-height:20px;color:red">Nota: escoger una hora no garantiza la disponibilidad de la misma. Al escoger su hora deseada, se le mostrará si la misma está disponible o no. </b></br></br>
                                                             Precio por Consulta: <b>$15.00 USD (se cancela al finalizar su consulta).</b>
-
                                                         </div>
                                                         <br>
-                                                        
+                                                     
                                                 </div>
                                                         
                                             </div>

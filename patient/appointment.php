@@ -49,7 +49,7 @@
     //echo $username;
 
 
-    $sqlmain= "select appointment.appoid,schedule.scheduleid,schedule.title,doctor.docname,patient.pname,schedule.scheduledate,schedule.scheduletime,appointment.apponum,appointment.appodate from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join patient on patient.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid  where  patient.pid=$userid ";
+    $sqlmain= "select appointment.appoid,schedule.scheduleid,schedule.title,doctor.docname,patient.pname,schedule.scheduledate,schedule.scheduletime,appointment.apponum,appointment.appodate,appointment.appotime from schedule inner join appointment on schedule.scheduleid=appointment.scheduleid inner join patient on patient.pid=appointment.pid inner join doctor on schedule.docid=doctor.docid  where  patient.pid=$userid ";
 
     if($_POST){
         //print_r($_POST);
@@ -251,6 +251,7 @@
                                             $scheduletime=$row["scheduletime"];
                                             $apponum=$row["apponum"];
                                             $appodate=$row["appodate"];
+                                            $appotime=$row["appotime"];
                                             $appoid=$row["appoid"];
     
                                             if($scheduleid==""){
@@ -263,7 +264,7 @@
                                                     
                                                         <div style="width:100%;">
                                                         <div class="h3-search">
-                                                                    Fecha de la Cita: '.substr($appodate,0,30).'<br>
+                                                                    Fecha de Creación: '.substr($appodate,0,30).'<br>
                                                                     Número de Referencia: OC-000-'.$appoid.'
                                                                 </div>
                                                                 <div class="h1-search">
@@ -278,7 +279,7 @@
                                                                 
                                                                 
                                                                 <div class="h4-search">
-                                                                    Fecha Agendada: '.$scheduledate.'<br>Hora de Inicio: <b>'.substr($scheduletime,0,5).'</b> (24h)
+                                                                    Fecha de la Cita: '.$scheduledate.'<br>Hora de Inicio: <b>'.substr($appotime,0,5).'</b> (24h)
                                                                 </div>
                                                                 <br>
                                                                 <a href="?action=drop&id='.$appoid.'&title='.$title.'&doc='.$docname.'" ><button  class="login-btn btn-primary-soft btn "  style="padding-top:11px;padding-bottom:11px;width:100%"><font class="tn-in-text">Cancelar Cita</font></button></a>

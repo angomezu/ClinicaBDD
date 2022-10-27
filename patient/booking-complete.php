@@ -1,7 +1,5 @@
 <?php
 
-    //learn from w3schools.com
-
     session_start();
 
     if(isset($_SESSION["user"])){
@@ -22,8 +20,11 @@
     $userfetch=$userrow->fetch_assoc();
     $userid= $userfetch["pid"];
     $username=$userfetch["pname"];
+    $scheduleid=$userfetch["scheduleid"];
 
+  
     include("../connection.php");
+
     if($_POST){
         if(isset($_POST["booknow"])){
             $apponum=$_POST["apponum"];
