@@ -52,7 +52,7 @@
             }?>
           <li class="nav-item"><a href="#sobre-nosotros" class="nav-link">Sobre Nosotros</a></li>
           <li class="nav-item"><a href="#servicios" class="nav-link">Servicios</a></li>
-          <li class="nav-item"><a href="#precios" class="nav-link">Precios</a></li>
+          <li class="nav-item"><a href="#precios" class="nav-link">Departamentos</a></li>
           <li class="nav-item"><a href="#contactanos" class="nav-link">Contactanos</a></li>
           <!--<li class="nav-item cta"><a href="contact.html" class="nav-link" data-toggle="modal"
               data-target="#modalRequest"><span>Haz una cita</span></a></li>-->
@@ -479,8 +479,7 @@ La clínica está creciendo continuamente por lo que se busca agilizar algunos p
             <h2 class="ftco-heading-2">Contactanos</h2>
             <div class="block-23 mb-3">
               <ul>
-                <li><span class="icon icon-map-marker"></span><span class="text">Colonia Rabida, Santa Ana, El
-                    Salvador</span></li>
+                <li><span class="icon icon-map-marker"></span><span class="text">Avenida Isaac Esquivel # 5B Nejapa, San Salvador</span></li>
                 <li><a href="#"><span class="icon icon-phone"></span><span class="text">+ (503) 2234-4444</span></a>
                 </li>
                 <li><a href="#"><span class="icon icon-envelope"></span><span
